@@ -1,0 +1,1861 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guide de communication de Redon</title>
+<meta name="description" content="Le mode d'emploi interactif de l'identité visuelle de la Ville de Redon : couleurs, composants, modèles, formats et checklist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* ============================================================
+   Guide de communication visuelle — Ville de Redon
+   Jetons de couleur : thème clair par défaut, thème sombre
+   redéfini au niveau des jetons uniquement.
+   ============================================================ */
+:root{
+  --ground:#f5f8f8; --surface:#ffffff; --surface-2:#eaf1f1; --surface-3:#dfe9ea;
+  --line:#d7e2e3; --line-strong:#b9caca;
+  --ink:#22384a; --ink-2:#5b6a75; --ink-3:#8797a1;
+  --accent:#00a096; --accent-deep:#00736c; --accent-soft:#e0f3f1;
+  --ray:#f4be3a; --alert:#e53935; --alert-soft:#fdecea;
+  --ok:#008435; --ok-soft:#e7f3ec;
+  --gold-bg:#22384a; --gold-fg:#c3d2da; --gold-strong:#ffffff;
+  --shadow:0 1px 2px rgba(34,56,74,.05), 0 8px 24px -12px rgba(34,56,74,.18);
+  --shadow-lg:0 2px 4px rgba(34,56,74,.06), 0 24px 48px -20px rgba(34,56,74,.28);
+  --logo-pad:transparent;
+  /* couleurs d'univers — valeurs réelles de la charte */
+  --u-municipale:#00a096; --u-environnement:#008435; --u-sport:#2498d4;
+  --u-patrimoine:#7a2338; --u-commerce:#8e44ad; --u-culture:#e64373;
+  --u-enfance:#e95e0f; --u-solidarite:#ff5757; --u-travaux:#f4be3a;
+  --u-secondaire:#b0c74e;
+  --r-sm:8px; --r-md:14px; --r-lg:22px; --r-xl:30px;
+  --nav-w:294px;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Poppins","Segoe UI",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0f1a21; --surface:#17242c; --surface-2:#1e3039; --surface-3:#263c47;
+    --line:#2b414d; --line-strong:#3d5765;
+    --ink:#e9eff1; --ink-2:#a6b7bf; --ink-3:#7d8f99;
+    --accent:#2ec5b8; --accent-deep:#7fe3d8; --accent-soft:#12332f;
+    --ray:#f7cf67; --alert:#ff6f6a; --alert-soft:#34201f;
+    --ok:#3fbf6b; --ok-soft:#122b1d;
+    --gold-bg:#1e3039; --gold-fg:#a6b7bf; --gold-strong:#e9eff1;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+    --shadow-lg:0 2px 4px rgba(0,0,0,.5), 0 24px 48px -20px rgba(0,0,0,.8);
+    --logo-pad:#ffffff;
+    --u-municipale:#1fb8ad; --u-environnement:#2ea355; --u-sport:#48aee3;
+    --u-patrimoine:#b8566e; --u-commerce:#a968c4; --u-culture:#ef6d95;
+    --u-enfance:#f5813c; --u-solidarite:#ff7d7d; --u-travaux:#f7cf67;
+    --u-secondaire:#c2d768;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0f1a21; --surface:#17242c; --surface-2:#1e3039; --surface-3:#263c47;
+  --line:#2b414d; --line-strong:#3d5765;
+  --ink:#e9eff1; --ink-2:#a6b7bf; --ink-3:#7d8f99;
+  --accent:#2ec5b8; --accent-deep:#7fe3d8; --accent-soft:#12332f;
+  --ray:#f7cf67; --alert:#ff6f6a; --alert-soft:#34201f;
+  --ok:#3fbf6b; --ok-soft:#122b1d;
+  --gold-bg:#1e3039; --gold-fg:#a6b7bf; --gold-strong:#e9eff1;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+  --shadow-lg:0 2px 4px rgba(0,0,0,.5), 0 24px 48px -20px rgba(0,0,0,.8);
+  --logo-pad:#ffffff;
+  --u-municipale:#1fb8ad; --u-environnement:#2ea355; --u-sport:#48aee3;
+  --u-patrimoine:#b8566e; --u-commerce:#a968c4; --u-culture:#ef6d95;
+  --u-enfance:#f5813c; --u-solidarite:#ff7d7d; --u-travaux:#f7cf67;
+  --u-secondaire:#c2d768;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--serif); font-size:17px; line-height:1.62;
+  font-synthesis-weight:none;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent-deep);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--accent)}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:3px}
+button{font:inherit;color:inherit}
+hr{border:0;border-top:1px solid var(--line);margin:2.5rem 0}
+
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--accent);color:#fff;
+  padding:.7rem 1.2rem;border-radius:0 0 var(--r-sm) 0;font-family:var(--sans);font-weight:600}
+.skip:focus{left:0}
+
+/* ---------- Trame générale ---------- */
+.app{display:grid;grid-template-columns:var(--nav-w) minmax(0,1fr);min-height:100vh}
+.app > *{min-width:0}
+
+/* ---------- Navigation ---------- */
+.nav{
+  grid-column:1;position:sticky;top:0;height:100vh;overflow-y:auto;overscroll-behavior:contain;
+  background:var(--surface);border-right:1px solid var(--line);
+  display:flex;flex-direction:column;font-family:var(--sans);
+}
+.nav__brand{display:block;padding:1.3rem 1.4rem 1.2rem;
+  border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+.nav__logo{width:92px;margin-bottom:.8rem;border-radius:var(--r-sm);background:var(--logo-pad);padding:3px 5px}
+.nav__brand b{display:block;font-size:.87rem;font-weight:700;letter-spacing:-.005em;line-height:1.3}
+.nav__brand span{display:block;font-size:.67rem;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase;margin-top:.35rem;font-weight:600}
+.nav__scroll{padding:.9rem .8rem 2rem;flex:1}
+.nav__group{margin-bottom:.15rem}
+.nav__part{
+  display:flex;align-items:baseline;gap:.6rem;width:100%;text-align:left;
+  padding:.5rem .6rem;border-radius:var(--r-sm);text-decoration:none;color:var(--ink);
+  font-size:.84rem;font-weight:600;line-height:1.35;border:0;background:none;cursor:pointer;
+  transition:background .15s ease,color .15s ease;
+}
+.nav__part:hover{background:var(--surface-2)}
+.nav__num{font-family:var(--mono);font-size:.7rem;color:var(--ink-3);flex:none;
+  font-variant-numeric:tabular-nums;padding-top:.1rem}
+.nav__part[aria-current="true"]{background:var(--accent-soft);color:var(--accent-deep)}
+.nav__part[aria-current="true"] .nav__num{color:var(--accent-deep)}
+.nav__sub{list-style:none;margin:.1rem 0 .5rem;padding:0 0 0 2.1rem;display:none}
+.nav__group.is-open .nav__sub{display:block}
+.nav__sub a{display:block;padding:.28rem .5rem;font-size:.775rem;color:var(--ink-2);
+  text-decoration:none;border-radius:6px;border-left:2px solid var(--line);padding-left:.7rem}
+.nav__sub a:hover{color:var(--ink);background:var(--surface-2)}
+.nav__sub a[aria-current="true"]{color:var(--accent-deep);border-left-color:var(--accent);font-weight:600}
+.nav.is-dimmed .nav__group:not(.is-path){opacity:.38}
+.nav__pathnote{display:none;margin:0 .6rem .8rem;padding:.55rem .7rem;border-radius:var(--r-sm);
+  background:var(--accent-soft);color:var(--accent-deep);font-size:.73rem;font-weight:600;line-height:1.4}
+.nav.is-dimmed .nav__pathnote{display:block}
+.nav__pathnote button{background:none;border:0;padding:0;margin-top:.25rem;font-size:.72rem;
+  text-decoration:underline;cursor:pointer;color:inherit;font-weight:500;display:block}
+
+/* ---------- Barre supérieure ---------- */
+.topbar{
+  position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:.7rem;
+  padding:.6rem 1.2rem;background:color-mix(in srgb,var(--ground) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);
+  font-family:var(--sans);
+}
+.topbar__burger{display:none}
+.searchbtn{
+  flex:1;max-width:420px;display:flex;align-items:center;gap:.55rem;
+  padding:.5rem .8rem;border:1px solid var(--line);border-radius:999px;background:var(--surface);
+  color:var(--ink-3);font-size:.82rem;cursor:pointer;text-align:left;transition:border-color .15s;
+  min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+}
+.searchbtn:hover{border-color:var(--line-strong);color:var(--ink-2)}
+.searchbtn kbd{margin-left:auto;font-family:var(--mono);font-size:.66rem;background:var(--surface-2);
+  border:1px solid var(--line);border-radius:5px;padding:.1rem .35rem;color:var(--ink-3)}
+.iconbtn{width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line);
+  border-radius:999px;background:var(--surface);cursor:pointer;color:var(--ink-2);transition:.15s}
+.iconbtn:hover{border-color:var(--line-strong);color:var(--ink)}
+.iconbtn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round}
+.topbar__spacer{flex:1}
+.progress{position:absolute;left:0;bottom:-1px;height:2px;background:var(--accent);width:0;transition:width .1s linear}
+
+/* ---------- Contenu ---------- */
+.content{padding:0 clamp(1.1rem,4vw,3.4rem) 5rem;max-width:1180px}
+.sec{padding-top:3.2rem;scroll-margin-top:70px}
+.sec + .sec{border-top:1px solid var(--line);margin-top:3.6rem}
+.prose{max-width:70ch}
+.prose p{margin:0 0 1.05rem}
+.lead{font-size:1.12rem;color:var(--ink-2);line-height:1.6}
+
+/* Cartouche — le composant maison, réemployé comme titre de partie */
+.cartouche{position:relative;display:inline-block;background:var(--accent);color:#fff;
+  border-radius:var(--r-lg);padding:.85rem 1.6rem 1rem;margin:0 0 2rem;max-width:min(100%,30ch)}
+.cartouche::after{content:"";position:absolute;left:30px;bottom:-17px;width:32px;height:18px;
+  background:var(--accent);clip-path:polygon(0 0,100% 0,0 100%)}
+.cartouche__cat{display:block;font-family:var(--sans);font-size:.7rem;font-weight:700;
+  letter-spacing:.13em;text-transform:uppercase;opacity:.9;margin-bottom:.15rem}
+.cartouche h2{font-family:var(--sans);font-weight:800;font-size:clamp(1.35rem,2.6vw,1.75rem);
+  margin:0;line-height:1.15;text-wrap:balance;letter-spacing:-.015em}
+
+h3{font-family:var(--sans);font-weight:700;font-size:1.16rem;letter-spacing:-.01em;
+  margin:2.6rem 0 .55rem;scroll-margin-top:80px;text-wrap:balance;position:relative}
+h3::after{content:"";display:block;width:34px;height:3px;border-radius:2px;background:var(--accent);margin-top:.5rem}
+h4{font-family:var(--sans);font-weight:600;font-size:.95rem;margin:1.7rem 0 .45rem;color:var(--ink)}
+.eyebrow{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-3);margin:0 0 .4rem}
+
+/* Listes règles ✓ / ✗ */
+.rules{list-style:none;margin:1rem 0 1.2rem;padding:0;display:flex;flex-direction:column;gap:.42rem;max-width:74ch}
+.rules li{display:flex;gap:.7rem;align-items:flex-start;font-size:.965rem;line-height:1.5}
+.rules li::before{font-family:var(--sans);font-weight:700;font-size:.85rem;flex:none;
+  width:21px;height:21px;border-radius:6px;display:grid;place-items:center;margin-top:.16rem}
+.rules--do li::before{content:"✓";background:var(--ok-soft);color:var(--ok)}
+.rules--dont li::before{content:"✗";background:var(--alert-soft);color:var(--alert)}
+.bullets{margin:1rem 0 1.2rem;padding-left:1.15rem;max-width:72ch}
+.bullets li{margin-bottom:.42rem}
+.bullets li::marker{color:var(--accent)}
+
+/* Encadrés */
+.callout{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);
+  border-radius:var(--r-sm);padding:1.1rem 1.3rem;margin:1.6rem 0;box-shadow:var(--shadow);max-width:76ch}
+.callout__t{font-family:var(--sans);font-weight:700;font-size:.9rem;margin:0 0 .35rem;color:var(--ink)}
+.callout p{margin:0 0 .55rem;font-size:.96rem}
+.callout p:last-child{margin-bottom:0}
+.callout--ray{border-left-color:var(--ray)}
+.callout--alert{border-left-color:var(--alert);background:var(--alert-soft)}
+
+/* Tableaux */
+.tblwrap{overflow-x:auto;margin:1.3rem 0 1.6rem;border:1px solid var(--line);
+  border-radius:var(--r-md);background:var(--surface);box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:.855rem;min-width:min(100%,480px)}
+th,td{text-align:left;padding:.68rem .95rem;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.45}
+thead th{font-weight:700;font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-2);background:var(--surface-2);white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--surface-2)}
+td strong{font-weight:600}
+.num{font-family:var(--mono);font-size:.93em;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* Figures */
+figure{margin:1.8rem 0}
+figcaption{font-family:var(--sans);font-size:.775rem;color:var(--ink-2);margin-top:.6rem;line-height:1.45;max-width:66ch}
+.zoom{border-radius:var(--r-md);border:1px solid var(--line);overflow:hidden;background:var(--surface-2);
+  cursor:zoom-in;box-shadow:var(--shadow);display:block;padding:0;width:100%}
+.zoom img{width:100%}
+.figrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;align-items:start}
+
+/* ---------- Accueil ---------- */
+.hero{padding:2.8rem 0 .5rem;position:relative}
+.hero__rays{position:absolute;right:0;top:2rem;width:120px;height:80px;opacity:.9;pointer-events:none}
+.hero__eyebrow{font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--accent-deep);margin:0 0 .9rem}
+.hero h1{font-family:var(--sans);font-weight:800;letter-spacing:-.03em;line-height:1.02;
+  font-size:clamp(2.3rem,6vw,4rem);margin:0 0 1rem;max-width:16ch;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero__sub{font-size:1.2rem;color:var(--ink-2);max-width:56ch;margin:0 0 1.6rem;line-height:1.55}
+.hero__meta{display:flex;flex-wrap:wrap;gap:.5rem;font-family:var(--sans);font-size:.75rem;margin-bottom:2.6rem}
+.chip{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .75rem;border-radius:999px;
+  background:var(--surface);border:1px solid var(--line);color:var(--ink-2);font-weight:500}
+.chip b{font-weight:700;color:var(--ink)}
+
+.goldrule{background:var(--gold-bg);color:var(--gold-fg);border-radius:var(--r-lg);
+  padding:1.8rem 2rem;margin:2.4rem 0;max-width:74ch;position:relative;overflow:hidden}
+.goldrule .eyebrow{color:var(--ray);margin-bottom:.7rem}
+.goldrule strong{display:block;font-family:var(--sans);font-weight:800;font-size:clamp(1.15rem,2.6vw,1.5rem);
+  line-height:1.2;margin-bottom:.75rem;letter-spacing:-.015em;color:var(--gold-strong)}
+.goldrule p{margin:0 0 .5rem;font-size:.98rem}
+.goldrule p:last-child{margin-bottom:0}
+
+/* Parcours de lecture */
+.paths{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:.9rem;margin:1.2rem 0 1rem}
+.path{display:flex;flex-direction:column;gap:.4rem;text-align:left;padding:1.1rem 1.2rem;
+  border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface);cursor:pointer;
+  transition:.16s ease;font-family:var(--sans);box-shadow:var(--shadow)}
+.path:hover{border-color:var(--accent);transform:translateY(-2px)}
+.path[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);box-shadow:none}
+.path b{font-size:.95rem;font-weight:700}
+.path span{font-size:.78rem;color:var(--ink-2);line-height:1.45}
+.path[aria-pressed="true"] span{color:var(--accent-deep)}
+
+/* Cartes de raccourcis */
+.quicklinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.8rem;margin:1.2rem 0 0}
+.qlink{display:flex;flex-direction:column;gap:.25rem;padding:.95rem 1.1rem;border-radius:var(--r-md);
+  background:var(--surface);border:1px solid var(--line);text-decoration:none;color:inherit;
+  font-family:var(--sans);transition:.16s;box-shadow:var(--shadow)}
+.qlink:hover{border-color:var(--accent);transform:translateY(-2px);color:inherit}
+.qlink b{font-size:.9rem;font-weight:700}
+.qlink span{font-size:.76rem;color:var(--ink-2)}
+
+/* ---------- Palette ---------- */
+.palette{display:grid;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));gap:.8rem;margin:1.4rem 0 1rem}
+.swatch{position:relative;border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;
+  background:var(--surface);cursor:copy;text-align:left;padding:0;transition:.16s;
+  font-family:var(--sans);box-shadow:var(--shadow);display:block;width:100%}
+.swatch:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.swatch__top{height:78px;display:flex;align-items:center;justify-content:center;background:var(--c)}
+.swatch__top img{width:46px;height:46px}
+.swatch__body{padding:.6rem .8rem .75rem}
+.swatch__name{display:block;font-size:.83rem;font-weight:700;line-height:1.25}
+.swatch__hex{display:block;font-family:var(--mono);font-size:.72rem;color:var(--ink-2);margin-top:.15rem}
+.swatch__use{display:block;font-size:.7rem;color:var(--ink-3);margin-top:.35rem;line-height:1.4}
+.swatch::after{content:"Copié";position:absolute;top:8px;right:8px;background:var(--ink);color:var(--ground);
+  font-size:.62rem;font-weight:700;padding:.2rem .5rem;border-radius:999px;opacity:0;transition:opacity .2s}
+.swatch.is-copied::after{opacity:1}
+
+/* ---------- Pictogrammes ---------- */
+.pictos{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:.9rem;margin:1.3rem 0}
+.picto{text-align:center;font-family:var(--sans)}
+.picto img{width:64px;height:64px;margin:0 auto .45rem}
+.picto b{display:block;font-size:.76rem;font-weight:600;line-height:1.3}
+.picto span{display:block;font-size:.68rem;color:var(--ink-3);margin-top:.1rem}
+
+/* ---------- Sélecteur de modèle ---------- */
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:1.4rem 1.5rem 1.5rem;margin:1.6rem 0 2rem;box-shadow:var(--shadow);font-family:var(--sans)}
+.tool__t{font-family:var(--sans);font-weight:700;font-size:1rem;margin:0 0 .2rem;display:flex;
+  align-items:center;gap:.5rem}
+.tool__t svg{width:17px;height:17px;fill:none;stroke:var(--accent);stroke-width:1.9;
+  stroke-linecap:round;stroke-linejoin:round;flex:none}
+.tool__hint{font-family:var(--serif);font-size:.9rem;color:var(--ink-2);margin:0 0 1rem}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.55rem}
+.opt{padding:.75rem .9rem;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--ground);
+  cursor:pointer;text-align:left;font-size:.83rem;line-height:1.4;font-weight:500;transition:.14s}
+.opt:hover{border-color:var(--accent)}
+.opt[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+.result{margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid var(--line);display:none}
+.result.is-on{display:block;animation:fade .28s ease}
+@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.result__badge{display:inline-flex;align-items:center;gap:.45rem;padding:.28rem .8rem;border-radius:999px;
+  background:var(--accent-soft);color:var(--accent-deep);font-size:.74rem;font-weight:700;margin-bottom:.6rem}
+.result h4{margin:.2rem 0 .5rem;font-size:1.05rem;font-weight:700}
+.result p{font-family:var(--serif);font-size:.95rem;margin:0 0 .6rem;color:var(--ink-2)}
+.compo{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin:.8rem 0 0;font-size:.76rem}
+.compo span{background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:.24rem .7rem;font-weight:500}
+.compo i{color:var(--ink-3);font-style:normal}
+
+/* ---------- Modèles (cartes) ---------- */
+.models{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.9rem;margin:1.4rem 0}
+.model{border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface);
+  padding:1.1rem 1.2rem;font-family:var(--sans);box-shadow:var(--shadow);border-top:4px solid var(--c,var(--accent))}
+.model__n{font-family:var(--mono);font-size:.7rem;color:var(--ink-3);letter-spacing:.06em}
+.model b{display:block;font-size:1rem;font-weight:700;margin:.15rem 0 .4rem}
+.model p{font-family:var(--serif);font-size:.88rem;color:var(--ink-2);margin:0 0 .5rem;line-height:1.5}
+.model .compo{font-size:.7rem}
+
+/* ---------- Checklist ---------- */
+.check{list-style:none;margin:1rem 0 0;padding:0;display:flex;flex-direction:column;gap:.15rem}
+.check li{margin:0}
+.check label{display:flex;gap:.75rem;align-items:flex-start;padding:.5rem .6rem;border-radius:var(--r-sm);
+  cursor:pointer;font-size:.93rem;line-height:1.45;transition:background .14s}
+.check label:hover{background:var(--surface-2)}
+.check input{appearance:none;flex:none;width:20px;height:20px;margin-top:.18rem;border:1.8px solid var(--line-strong);
+  border-radius:6px;background:var(--ground);cursor:pointer;position:relative;transition:.14s}
+.check input:checked{background:var(--accent);border-color:var(--accent)}
+.check input:checked::after{content:"";position:absolute;left:6px;top:2px;width:5px;height:10px;
+  border:solid #fff;border-width:0 2.4px 2.4px 0;transform:rotate(42deg)}
+.check input:checked + span{color:var(--ink-3);text-decoration:line-through;text-decoration-color:var(--line-strong)}
+.bar{height:6px;border-radius:999px;background:var(--surface-2);overflow:hidden;margin:.9rem 0 .3rem}
+.bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s ease;border-radius:999px}
+.bar-lbl{display:flex;justify-content:space-between;align-items:center;font-family:var(--sans);
+  font-size:.76rem;color:var(--ink-2)}
+.linkbtn{background:none;border:0;padding:0;font-family:var(--sans);font-size:.76rem;color:var(--accent-deep);
+  text-decoration:underline;cursor:pointer}
+
+/* ---------- Rétroplanning ---------- */
+.fields{display:flex;flex-wrap:wrap;gap:.8rem;align-items:flex-end;margin-bottom:.2rem}
+.field{display:flex;flex-direction:column;gap:.3rem}
+.field label{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.field input,.field select{font-family:var(--sans);font-size:.87rem;padding:.5rem .7rem;border:1px solid var(--line);
+  border-radius:var(--r-sm);background:var(--ground);color:var(--ink);min-width:190px}
+.deadline{margin-top:1.1rem;padding:1rem 1.2rem;border-radius:var(--r-md);background:var(--accent-soft);
+  color:var(--accent-deep);display:none}
+.deadline.is-on{display:block;animation:fade .28s ease}
+.deadline b{display:block;font-size:1.12rem;font-weight:800;margin-bottom:.2rem}
+.deadline small{font-size:.8rem;opacity:.85;display:block;line-height:1.5}
+.deadline.is-late{background:var(--alert-soft);color:var(--alert)}
+
+/* ---------- Interdits ---------- */
+.bans{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:.9rem;margin:1.4rem 0}
+.ban{border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface);padding:1rem 1.2rem;
+  box-shadow:var(--shadow)}
+.ban h4{margin:0 0 .55rem;font-size:.85rem;letter-spacing:.02em}
+.ban .rules{margin:0;gap:.35rem}
+.ban .rules li{font-size:.88rem}
+
+/* ---------- Recherche ---------- */
+.dialog{position:fixed;inset:0;z-index:120;display:none;padding:min(9vh,90px) 1rem 1rem;
+  background:rgba(15,26,33,.5);backdrop-filter:blur(3px)}
+.dialog.is-on{display:block}
+.dialog__panel{max-width:640px;margin:0 auto;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--r-md);box-shadow:var(--shadow-lg);overflow:hidden;max-height:min(70vh,560px);
+  display:flex;flex-direction:column}
+.dialog__in{display:flex;align-items:center;gap:.7rem;padding:.85rem 1.1rem;border-bottom:1px solid var(--line)}
+.dialog__in svg{width:18px;height:18px;fill:none;stroke:var(--ink-3);stroke-width:1.9;stroke-linecap:round}
+.dialog__in input{flex:1;border:0;background:none;font-family:var(--sans);font-size:1rem;color:var(--ink);outline:none}
+.dialog__out{overflow-y:auto;padding:.45rem}
+.hit{display:block;padding:.6rem .8rem;border-radius:var(--r-sm);text-decoration:none;color:inherit;font-family:var(--sans)}
+.hit:hover,.hit:focus{background:var(--surface-2);color:inherit}
+.hit b{display:block;font-size:.88rem;font-weight:600}
+.hit span{display:block;font-size:.76rem;color:var(--ink-2);margin-top:.1rem;overflow:hidden;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.hit em{font-style:normal;background:var(--ray);color:#22384a;border-radius:3px;padding:0 2px}
+.hit u{display:block;font-family:var(--mono);font-size:.64rem;color:var(--ink-3);text-decoration:none;
+  letter-spacing:.05em;text-transform:uppercase;margin-bottom:.15rem}
+.empty{padding:1.6rem 1rem;text-align:center;color:var(--ink-3);font-family:var(--sans);font-size:.85rem}
+
+/* ---------- Visionneuse ---------- */
+.lightbox{position:fixed;inset:0;z-index:130;background:rgba(15,26,33,.92);display:none;
+  place-items:center;padding:2rem;cursor:zoom-out}
+.lightbox.is-on{display:grid}
+.lightbox img{max-width:100%;max-height:88vh;border-radius:var(--r-sm);box-shadow:var(--shadow-lg)}
+.lightbox p{position:absolute;bottom:1.1rem;left:0;right:0;text-align:center;color:#dfe9ea;
+  font-family:var(--sans);font-size:.8rem;margin:0;padding:0 2rem}
+
+/* ---------- Pied — bandeau signature ---------- */
+.signature{background:var(--accent);color:#fff;margin-top:4rem;position:relative}
+.signature__wave{display:block;width:100%;height:38px}
+.signature__wave path{fill:var(--ground)}
+.signature__in{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;
+  padding:.4rem clamp(1.1rem,4vw,3.4rem) 2rem;max-width:1180px}
+.signature__waves{width:58px;flex:none}
+.signature__waves path{stroke:#fff;stroke-width:7;fill:none;stroke-linecap:round}
+.signature__txt{font-family:var(--sans);font-size:.95rem;line-height:1.35}
+.signature__txt b{display:block;font-size:1.15rem;font-weight:700}
+.signature__logo{margin-left:auto;background:#fff;border-radius:var(--r-md);padding:.4rem .7rem;width:112px}
+.colophon{padding:1.6rem clamp(1.1rem,4vw,3.4rem) 3rem;font-family:var(--sans);font-size:.76rem;
+  color:var(--ink-3);line-height:1.6;max-width:78ch}
+.colophon a{color:var(--ink-2)}
+
+/* ---------- Adaptation écran ---------- */
+@media (max-width:1000px){
+  :root{--nav-w:0px}
+  .app{grid-template-columns:minmax(0,1fr)}
+  .nav{position:fixed;top:0;left:0;width:290px;z-index:110;transform:translateX(-100%);
+    transition:transform .25s ease;box-shadow:var(--shadow-lg)}
+  .nav.is-open{transform:none}
+  .topbar__burger{display:grid}
+  .scrim{position:fixed;inset:0;background:rgba(15,26,33,.45);z-index:100;display:none}
+  .scrim.is-on{display:block}
+}
+@media (max-width:760px){
+  .hero__rays{display:none}
+  .hero{padding-top:2rem}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .searchbtn kbd{display:none}
+  .signature__logo{margin-left:0}
+}
+
+/* ---------- Impression ---------- */
+@media print{
+  :root{--ground:#fff;--surface:#fff;--surface-2:#fff;--line:#ccc;--ink:#000;--ink-2:#333}
+  .nav,.topbar,.scrim,.dialog,.lightbox,.paths,.quicklinks,.tool .opts,.hero__rays,
+  .linkbtn,.no-print,.searchbtn,.fields,.deadline{display:none!important}
+  /* La palette et les cartouches doivent sortir en couleur : c'est le sujet. */
+  .swatch__top,.cartouche,.cartouche::after,.signature,.picto img,.swatch,.model,
+  .rules li::before,.bar i,.goldrule{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .app{display:block}
+  .sec{page-break-inside:avoid;padding-top:1.4rem}
+  .zoom{cursor:default}
+  a{color:#000;text-decoration:none}
+  .signature{background:#fff;color:#000;border-top:2px solid #000}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<div class="scrim" id="scrim"></div>
+
+<div class="app">
+
+<!-- ══════════════ NAVIGATION ══════════════ -->
+<aside class="nav" id="nav" aria-label="Sommaire du guide">
+  <a class="nav__brand" href="#accueil">
+    <img class="nav__logo" src="assets/img/logo-ville-de-redon.png" alt="Ville de Redon">
+    <span>
+      <b>Guide de communication visuelle</b>
+      <span>Version 1.0</span>
+    </span>
+  </a>
+  <div class="nav__scroll">
+    <div class="nav__pathnote" id="pathnote">
+      <span id="pathnote-txt"></span>
+      <button type="button" id="pathclear">Voir tout le guide</button>
+    </div>
+    <nav id="toc"></nav>
+  </div>
+</aside>
+
+<div>
+<!-- ══════════════ BARRE ══════════════ -->
+<div class="topbar">
+  <button class="iconbtn topbar__burger" id="burger" aria-label="Ouvrir le sommaire" aria-expanded="false">
+    <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+  <button class="searchbtn" id="searchopen">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    Rechercher dans le guide…
+    <kbd>Ctrl K</kbd>
+  </button>
+  <div class="topbar__spacer"></div>
+  <button class="iconbtn" id="printbtn" aria-label="Imprimer le guide" title="Imprimer">
+    <svg viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2M8 14h8v7H8z"/></svg>
+  </button>
+  <button class="iconbtn" id="themebtn" aria-label="Changer de thème" title="Thème clair / sombre">
+    <svg viewBox="0 0 24 24" id="themeicon"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></svg>
+  </button>
+  <div class="progress" id="progress"></div>
+</div>
+
+<div class="content" id="contenu">
+
+<!-- ══════════════ ACCUEIL ══════════════ -->
+<section class="sec" id="accueil" data-title="Accueil" style="border:0;padding-top:0">
+  <div class="hero">
+    <svg class="hero__rays" viewBox="0 0 120 80" aria-hidden="true">
+      <g stroke-linecap="round" stroke-width="5" fill="none">
+        <path d="M14 62 L22 40" stroke="var(--u-culture)"/>
+        <path d="M34 56 L38 32" stroke="var(--u-sport)"/>
+        <path d="M56 52 L56 28" stroke="var(--ray)"/>
+        <path d="M78 56 L74 32" stroke="var(--u-environnement)"/>
+        <path d="M98 62 L90 40" stroke="var(--u-enfance)"/>
+      </g>
+    </svg>
+    <p class="hero__eyebrow">Ville de Redon · Service communication</p>
+    <h1>Le mode d'emploi de <em>notre identité</em></h1>
+    <p class="hero__sub">Tout ce qu'il faut pour produire, seul et vite, un support immédiatement reconnaissable comme celui de la Ville de Redon.</p>
+    <div class="hero__meta">
+      <span class="chip"><b>12</b> parties</span>
+      <span class="chip"><b>9</b> couleurs d'univers</span>
+      <span class="chip"><b>4</b> modèles de support</span>
+      <span class="chip"><b>1</b> police&nbsp;: Poppins</span>
+    </div>
+  </div>
+
+  <div class="tool">
+    <p class="tool__t">
+      <svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.4.8-4.7 4.3 1.2 6.3L12 17l-5.5 3 1.2-6.3L3 9.4l6.4-.8z"/></svg>
+      Par où commencer&nbsp;?
+    </p>
+    <p class="tool__hint">Choisissez votre profil&nbsp;: le sommaire ne mettra en avant que les parties qui vous concernent.</p>
+    <div class="paths">
+      <button class="path" type="button" data-path="elu" data-parts="1,3,8" aria-pressed="false">
+        <b>Élu·e ou encadrant·e</b>
+        <span>Parties 1, 3 et 8 : les principes, les couleurs, les quatre modèles.</span>
+      </button>
+      <button class="path" type="button" data-path="agent" data-parts="5,6,7,8,9,10" aria-pressed="false">
+        <b>Agent qui produit un support</b>
+        <span>Parties 5 à 10 : composants, ton, modèles, formats, méthode et checklist.</span>
+      </button>
+      <button class="path" type="button" data-path="presta" data-parts="2,3,4,11" aria-pressed="false">
+        <b>Prestataire ou partenaire</b>
+        <span>Parties 2, 3, 4 et 11 : logotype, couleurs, typographie, interdits.</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="goldrule">
+    <p class="eyebrow">La règle d'or</p>
+    <strong>Une information = une idée = une hiérarchie claire</strong>
+    <p>Si un support porte deux messages, il en faut deux. Si l'on hésite entre deux titres, c'est que le message n'est pas encore trouvé.</p>
+    <p>On privilégie les grands espaces blancs, les photos immersives, peu de texte et une lecture immédiate.</p>
+  </div>
+
+  <h3 id="raccourcis">Les outils du quotidien</h3>
+  <div class="quicklinks">
+    <a class="qlink" href="#p3"><b>Mémo couleurs</b><span>Les 9 univers, à copier d'un clic.</span></a>
+    <a class="qlink" href="#p8-1"><b>Quel modèle choisir&nbsp;?</b><span>Répondez à une question, obtenez le modèle.</span></a>
+    <a class="qlink" href="#p10-3"><b>Checklist avant publication</b><span>Les 10 points à cocher avant de diffuser.</span></a>
+    <a class="qlink" href="#p10-4"><b>Calcul du rétroplanning</b><span>À quelle date transmettre votre demande.</span></a>
+    <a class="qlink" href="#p9-1"><b>Mémo formats</b><span>Toutes les dimensions de référence.</span></a>
+    <a class="qlink" href="#p11"><b>Les interdits</b><span>Le récapitulatif en un écran.</span></a>
+  </div>
+
+  <p class="lead" style="margin-top:2.6rem;max-width:64ch">Ce guide se lit dans l'ordre la première fois, puis se consulte par entrée. Les parties&nbsp;8 à&nbsp;10 sont celles que l'on ouvre au quotidien.</p>
+</section>
+
+<!-- ══════════════ 1. INTRODUCTION ══════════════ -->
+<section class="sec" id="p1" data-part="1" data-title="Introduction">
+  <div class="cartouche"><span class="cartouche__cat">Partie 1</span><h2>Introduction</h2></div>
+
+  <h3 id="p1-1">1.1 Pourquoi ce guide</h3>
+  <div class="prose">
+    <p>La Ville de Redon produit chaque année plusieurs centaines de supports&nbsp;: affiches, flyers, publications sur les réseaux sociaux, panneaux de chantier, programmes, courriers, présentations. Ils sont réalisés par des services différents, avec des outils différents, dans des délais souvent courts.</p>
+    <p>Le résultat est connu&nbsp;: des supports de qualité inégale, difficilement identifiables comme émanant de la Ville, et un travail de mise en forme systématiquement recommencé.</p>
+    <p>Ce document ne remplace pas la charte du logotype&nbsp;: le logo de la Ville ne change pas. Il formalise le système graphique construit autour de ce logo et, surtout, il explique comment s'en servir.</p>
+  </div>
+  <div class="callout callout--ray">
+    <p class="callout__t">La portée du guide</p>
+    <p>Il est proposé que ce guide soit opposable en interne&nbsp;: il s'appliquerait à tous les supports produits par les services de la Ville et serait annexé aux marchés de communication et aux conventions de subvention et de partenariat. Ce point est soumis à l'arbitrage de la commission communication.</p>
+  </div>
+  <div class="callout">
+    <p class="callout__t">L'objectif</p>
+    <p>Qu'un agent de la Ville ou un prestataire puisse produire, en autonomie et rapidement, un support immédiatement identifiable comme étant celui de la Ville de Redon — quel que soit le support, quel que soit le service.</p>
+  </div>
+
+  <h3 id="p1-2">1.2 À qui s'adresse ce guide</h3>
+  <ul class="bullets">
+    <li>Aux <strong>agents de la Ville</strong> qui réalisent eux-mêmes leurs supports (services enfance-jeunesse, CCAS, sport, etc.)&nbsp;;</li>
+    <li>Au <strong>service communication</strong>, qui en est le garant et l'assure au quotidien&nbsp;;</li>
+    <li>Aux <strong>prestataires</strong> (graphistes, imprimeurs, agences) mandatés par la Ville&nbsp;;</li>
+    <li>Aux <strong>partenaires et associations</strong> soutenus par la Ville, pour la seule partie relative au logotype (partie&nbsp;2).</li>
+  </ul>
+
+  <h3 id="p1-3">1.3 Comment l'utiliser</h3>
+  <p class="prose">Trois niveaux de lecture&nbsp;:</p>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Vous êtes…</th><th>Lisez en priorité</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Élu·e ou encadrant·e</strong></td><td>Parties 1, 3 et 8 : les principes, les couleurs, les quatre modèles.</td></tr>
+      <tr><td><strong>Agent qui produit un support</strong></td><td>Parties 5 à 10 : composants, ton, modèles, formats, méthode et checklist.</td></tr>
+      <tr><td><strong>Prestataire ou partenaire</strong></td><td>Parties 2, 3, 4 et 11 : logotype, couleurs, typographie, interdits.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="p1-4">1.4 Les six principes de la communication de Redon</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Principe</th><th>Ce que cela veut dire concrètement</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Moderne</strong></td><td>Des mises en page aérées, des aplats francs, pas d'effets (ombres, contours, dégradés, biseaux).</td></tr>
+      <tr><td><strong>Sobre</strong></td><td>Un seul message par support. On enlève avant d'ajouter.</td></tr>
+      <tr><td><strong>Chaleureuse</strong></td><td>Des photos d'habitants en situation, une lumière naturelle, un ton direct et bienveillant.</td></tr>
+      <tr><td><strong>Institutionnelle sans être froide</strong></td><td>Le logo et la vague signent chaque support, mais le vocabulaire reste celui de la vie quotidienne.</td></tr>
+      <tr><td><strong>Très lisible</strong></td><td>Contrastes forts, corps de texte suffisants, hiérarchie évidente à trois mètres.</td></tr>
+      <tr><td><strong>Déclinable</strong></td><td>Tout le système est reproductible sous Canva par un agent non-graphiste.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="p1-5">1.5 La règle d'or</h3>
+  <div class="goldrule">
+    <strong>Une information = une idée = une hiérarchie claire</strong>
+    <p>Si un support porte deux messages, il en faut deux. Si l'on hésite entre deux titres, c'est que le message n'est pas encore trouvé.</p>
+    <p>On privilégie les grands espaces blancs, les photos immersives, peu de texte et une lecture immédiate.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 2. LOGOTYPE ══════════════ -->
+<section class="sec" id="p2" data-part="2" data-title="Le logotype">
+  <div class="cartouche"><span class="cartouche__cat">Partie 2</span><h2>Le logotype</h2></div>
+
+  <h3 id="p2-1">2.1 Le logo</h3>
+  <p class="prose">Le logotype associe la signature manuscrite «&nbsp;Redon&nbsp;», la mention «&nbsp;Ville de&nbsp;», le rayonnement et la vague. Il s'utilise dans son intégralité, sans recomposition.</p>
+  <figure style="max-width:420px">
+    <div style="background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:1.6rem 2rem">
+      <img src="assets/img/logo-ville-de-redon.png" alt="Logotype de la Ville de Redon : la mention « Ville de » et la signature manuscrite « Redon », surmontées du rayonnement et soulignées de la vague turquoise.">
+    </div>
+    <figcaption>Version générique du logotype — Ville de Redon.</figcaption>
+  </figure>
+
+  <h3 id="p2-2">2.2 Les versions et le choix du fond</h3>
+  <p class="prose">Les versions alternatives s'utilisent lorsque la version générique ne s'intègre pas convenablement. Elles sont dédiées aux fonds colorés, foncés et aux photographies.</p>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Type de fond</th><th>Version à utiliser</th></tr></thead>
+    <tbody>
+      <tr><td>Fond uni blanc ou très clair</td><td>Version générique (noir et turquoise).</td></tr>
+      <tr><td>Fond uni foncé ou noir</td><td>Version blanche, sans cartouche.</td></tr>
+      <tr><td>Fond uni coloré (couleur thématique)</td><td>Version blanche, ou version noire dans une pastille blanche.</td></tr>
+      <tr><td>Photo à dominante foncée</td><td>Version avec cartouche blanche, ou version blanche.</td></tr>
+      <tr><td>Photo à dominante claire</td><td>Version avec cartouche noire ou blanche.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout">
+    <p><strong>Règle simple&nbsp;:</strong> le logo doit toujours se détacher du fond sans que l'on ait à le chercher. En cas de doute, on choisit la version avec cartouche.</p>
+  </div>
+
+  <h3 id="p2-3">2.3 Taille minimale et zone de protection</h3>
+  <ul class="bullets">
+    <li><strong>Taille minimale&nbsp;:</strong> <span class="num">20 × 17 mm</span> en impression. En deçà, le logo n'est plus lisible et ne doit pas être utilisé.</li>
+    <li><strong>Zone de protection&nbsp;:</strong> proportionnelle à la largeur du logo, <span class="num">x = largeur / 5</span>. Exemple&nbsp;: pour un logo de 5&nbsp;cm de haut, x = 1&nbsp;cm.</li>
+    <li>Aucun élément graphique — logo, titre, objet, texte — ne doit apparaître dans cette zone.</li>
+    <li>Sur les supports numériques, on retient une hauteur minimale de <span class="num">60 px</span>.</li>
+  </ul>
+
+  <h3 id="p2-4">2.4 Les interdits</h3>
+  <p class="prose">Le logotype est reproduit sans modification, à partir des fichiers fournis par le service communication.</p>
+  <ul class="rules rules--dont">
+    <li>Aucune rotation.</li>
+    <li>Aucune déformation (l'homothétie est obligatoire).</li>
+    <li>Aucun recadrage&nbsp;: il est utilisé dans son intégralité.</li>
+    <li>Aucun changement de couleur sans autorisation du service communication. En cas d'acceptation, le fichier Illustrator est transmis.</li>
+    <li>Aucun effet ajouté&nbsp;: ombre portée, contour, dégradé, transparence.</li>
+    <li>Aucune recréation&nbsp;: on n'utilise jamais une copie d'écran ou une version retracée.</li>
+  </ul>
+
+  <h3 id="p2-5">2.5 Validation</h3>
+  <div class="callout callout--ray">
+    <p class="callout__t">Avant impression ou publication</p>
+    <p>Toute utilisation du logotype de la Ville de Redon sur un support de communication doit faire l'objet d'une validation par le service communication. Le fichier est envoyé par courriel à <a href="mailto:communication@mairie-redon.fr">communication@mairie-redon.fr</a>.</p>
+  </div>
+
+  <h3 id="p2-6">2.6 Application par des partenaires</h3>
+  <p class="prose">Lorsque la Ville met à disposition une salle, verse une subvention ou signe une convention, l'organisateur a l'obligation d'apposer le logotype de la Ville sur ses supports, en respectant la charte d'usage du logotype. En dehors de ces cas, l'utilisation du logotype n'est pas obligatoire et reste soumise à l'autorisation du service communication.</p>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Situation</th><th>Règle</th></tr></thead>
+    <tbody>
+      <tr><td>La Ville est le seul partenaire</td><td>Le logo est précédé de la mention «&nbsp;Avec le soutien de&nbsp;:&nbsp;» ou «&nbsp;En partenariat avec&nbsp;:&nbsp;».</td></tr>
+      <tr><td>La Ville est l'un des partenaires</td><td>L'organisateur place le logo à sa convenance, dans le bandeau des partenaires, en respectant la taille minimale et la zone de protection.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ══════════════ 3. COULEURS ══════════════ -->
+<section class="sec" id="p3" data-part="3" data-title="Les couleurs">
+  <div class="cartouche"><span class="cartouche__cat">Partie 3</span><h2>Les couleurs</h2></div>
+  <p class="lead prose">Une palette principale est établie pour les différents thèmes abordés par la Ville dans sa communication quotidienne. La couleur n'est pas décorative&nbsp;: elle indique de quoi l'on parle. Un habitant doit pouvoir reconnaître un sujet «&nbsp;enfance&nbsp;» ou «&nbsp;travaux&nbsp;» avant même d'avoir lu le titre.</p>
+
+  <h3 id="p3-1">3.1 La palette thématique</h3>
+  <p class="prose no-print" style="font-size:.9rem;color:var(--ink-2)">Cliquez sur une couleur pour copier son code hexadécimal.</p>
+  <div class="palette" id="palette"></div>
+  <p class="prose">La couleur d'univers colore&nbsp;: le cartouche, les pictogrammes, le bandeau signature, les filets et les intertitres. Le reste du support reste blanc, photographique ou en bleu foncé.</p>
+  <figure>
+    <button class="zoom" type="button" data-caption="Un même modèle, quatre univers : environnement, enfance jeunesse, vie municipale, commerce.">
+      <img loading="lazy" src="assets/img/exemple-4-univers.jpg" alt="Quatre publications réseaux sociaux construites sur le même modèle, déclinées en vert environnement, orange enfance, turquoise vie municipale et violet commerce.">
+    </button>
+    <figcaption>Un même modèle, quatre univers&nbsp;: environnement, enfance jeunesse, vie municipale, commerce.</figcaption>
+  </figure>
+
+  <h3 id="p3-2">3.2 Les couleurs de texte</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Usage</th><th>Référence</th></tr></thead>
+    <tbody>
+      <tr><td>Texte principal, titres sur fond clair</td><td><span class="num">#22384a</span> — bleu foncé</td></tr>
+      <tr><td>Texte secondaire, légendes, mentions</td><td><span class="num">#5b6a75</span> — gris bleuté</td></tr>
+      <tr><td>Texte sur fond coloré ou photo</td><td><span class="num">#ffffff</span> — blanc</td></tr>
+      <tr><td>Alerte, interdit, mise en garde</td><td><span class="num">#e53935</span> — rouge alerte</td></tr>
+    </tbody>
+  </table></div>
+  <p class="prose">Le noir pur (<span class="num">#000000</span>) est évité&nbsp;: il durcit la lecture et jure avec la palette. Le bleu foncé le remplace systématiquement.</p>
+
+  <h3 id="p3-3">3.3 Les règles d'emploi</h3>
+  <ul class="rules rules--do">
+    <li>Une seule couleur d'univers par support.</li>
+    <li>Les aplats sont francs et opaques&nbsp;: pas de dégradé, pas de transparence partielle.</li>
+    <li>Sur les supports transversaux (vœux, rapport d'activité, papeterie), on utilise le turquoise «&nbsp;vie municipale&nbsp;».</li>
+  </ul>
+  <ul class="rules rules--dont">
+    <li>Jamais deux couleurs thématiques sur un même visuel, sauf sur une page de programme qui liste plusieurs univers.</li>
+    <li>Jamais de couleur inventée hors palette, y compris «&nbsp;pour aller avec la photo&nbsp;».</li>
+  </ul>
+  <div class="callout callout--ray">
+    <p class="callout__t">Le statut du jaune</p>
+    <p>Le jaune remplit deux fonctions distinctes, et deux seulement.</p>
+    <p><strong>1. Couleur d'accent&nbsp;:</strong> il met en valeur une information dans le rayonnement graphique, un pictogramme ou une mention, quel que soit l'univers.</p>
+    <p><strong>2. Couleur de l'univers Travaux&nbsp;:</strong> il signale une contrainte de voirie, de circulation ou de réseaux. Son rôle y est normatif — c'est le code de la vigilance, pas un choix esthétique.</p>
+    <p>Hors de ces deux cas, le jaune n'est jamais la couleur principale d'un support, et jamais celle d'un support événementiel.</p>
+  </div>
+
+  <h3 id="p3-4">3.4 Contraste et accessibilité</h3>
+  <ul class="bullets">
+    <li>Sur photo, un texte blanc n'est lisible que si la zone est suffisamment sombre&nbsp;: on pose alors un cartouche ou un bloc blanc plutôt que du texte nu.</li>
+    <li>Rapport de contraste minimal recherché&nbsp;: <span class="num">4,5:1</span> pour un texte courant, <span class="num">3:1</span> pour les grands titres.</li>
+    <li>La couleur ne porte jamais seule une information&nbsp;: elle est toujours doublée d'un mot ou d'un pictogramme.</li>
+  </ul>
+</section>
+
+<!-- ══════════════ 4. TYPOGRAPHIE ══════════════ -->
+<section class="sec" id="p4" data-part="4" data-title="La typographie">
+  <div class="cartouche"><span class="cartouche__cat">Partie 4</span><h2>La typographie</h2></div>
+
+  <h3 id="p4-1">4.1 Une police unique&nbsp;: Poppins</h3>
+  <p class="prose">Toute la communication de la Ville s'écrit en Poppins. Une seule famille, très peu de variations, une hiérarchie simple&nbsp;: c'est ce qui produit la cohérence, davantage que la couleur.</p>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Graisse</th><th>Aperçu</th><th>Usage</th></tr></thead>
+    <tbody>
+      <tr><td><strong>ExtraBold</strong></td><td style="font-family:var(--sans);font-weight:800;font-size:1.25rem">Redon 2026</td><td>Titres d'affiche, titres de cartouche, chiffres clés.</td></tr>
+      <tr><td><strong>Bold</strong></td><td style="font-family:var(--sans);font-weight:700;font-size:1.25rem">Redon 2026</td><td>Sous-titres, intertitres, dates, mots mis en avant.</td></tr>
+      <tr><td><strong>SemiBold</strong></td><td style="font-family:var(--sans);font-weight:600;font-size:1.25rem">Redon 2026</td><td>Chapeaux, libellés de blocs d'information, boutons.</td></tr>
+      <tr><td><strong>Regular</strong></td><td style="font-family:var(--sans);font-weight:400;font-size:1.25rem">Redon 2026</td><td>Texte courant, mentions, légendes.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="prose">Poppins est une police libre (SIL Open Font License) disponible sur <a href="https://fonts.google.com/specimen/Poppins" target="_blank" rel="noopener">Google&nbsp;Fonts</a> et nativement présente dans Canva. Elle est installée sur les postes des agents qui produisent des supports.</p>
+
+  <h3 id="p4-2">4.2 La hiérarchie type</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Niveau</th><th>Affiche A3</th><th>Flyer A5</th><th>Réseaux sociaux<br>1080 × 1350</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Catégorie</strong> (cartouche)</td><td class="num">24 pt — Bold</td><td class="num">12 pt — Bold</td><td class="num">34 px — Bold, capitales</td></tr>
+      <tr><td><strong>Titre</strong></td><td class="num">90 à 120 pt — ExtraBold</td><td class="num">40 à 48 pt — ExtraBold</td><td class="num">110 à 140 px — ExtraBold</td></tr>
+      <tr><td><strong>Sous-titre</strong></td><td class="num">36 pt — SemiBold</td><td class="num">18 pt — SemiBold</td><td class="num">56 px — SemiBold</td></tr>
+      <tr><td><strong>Date / lieu</strong> (bloc blanc)</td><td class="num">28 pt — Bold</td><td class="num">14 pt — Bold</td><td class="num">44 px — Bold</td></tr>
+      <tr><td><strong>Texte courant</strong></td><td class="num">18 pt — Regular</td><td class="num">10 à 11 pt — Regular</td><td class="num">32 px — Regular</td></tr>
+      <tr><td><strong>Mentions</strong></td><td class="num">12 pt — Regular</td><td class="num">8 pt — Regular</td><td class="num">24 px — Regular</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout">
+    <p>Ces valeurs sont des points de départ, pas des contraintes absolues&nbsp;: ce qui compte est l'écart entre les niveaux. <strong>Un titre doit toujours faire au moins le double du texte courant.</strong></p>
+  </div>
+
+  <h3 id="p4-3">4.3 Règles de composition</h3>
+  <ul class="rules rules--do">
+    <li>Titres sur deux à trois lignes maximum, coupés au sens et non à la mesure.</li>
+    <li>Texte aligné à gauche, jamais justifié.</li>
+    <li>Capitales réservées à la catégorie du cartouche et aux mots très courts.</li>
+    <li>Interlignage aéré&nbsp;: environ 1,2 pour les titres, 1,4 pour le texte courant.</li>
+  </ul>
+  <ul class="rules rules--dont">
+    <li>Pas de soulignement, pas d'italique décoratif, pas de lettrage étiré ou condensé manuellement.</li>
+    <li>Pas de mot coupé en fin de ligne dans un titre.</li>
+    <li>Pas de texte posé directement sur une photo chargée.</li>
+  </ul>
+
+  <h3 id="p4-4">4.4 En bureautique</h3>
+  <p class="prose">Pour les documents administratifs produits sous Word, Outlook ou PowerPoint, lorsque Poppins n'est pas disponible&nbsp;:</p>
+  <ul class="bullets">
+    <li><strong>Documents administratifs internes&nbsp;:</strong> Aptos ou Calibri, corps 11.</li>
+    <li><strong>Courriers et parapheurs&nbsp;:</strong> modèle fourni par le service communication, à ne pas modifier.</li>
+    <li><strong>Signatures de courriel&nbsp;:</strong> modèle unique, sans image ni citation ajoutée.</li>
+  </ul>
+</section>
+
+<!-- ══════════════ 5. COMPOSANTS ══════════════ -->
+<section class="sec" id="p5" data-part="5" data-title="Les composants graphiques">
+  <div class="cartouche"><span class="cartouche__cat">Partie 5</span><h2>Les composants graphiques</h2></div>
+  <p class="lead prose">L'identité repose sur sept composants récurrents. Ce sont eux — et non le logo seul — qui rendent un support reconnaissable. Ils ne se cumulent pas&nbsp;: chacun a une fonction et une seule.</p>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Composant</th><th>Fonction</th><th>Quantité par support</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Le cartouche</strong></td><td>Annoncer&nbsp;: catégorie + titre</td><td class="num">1</td></tr>
+      <tr><td><strong>Le bloc blanc</strong></td><td>Informer&nbsp;: date, lieu, horaire, tarif</td><td class="num">1 à 3 blocs</td></tr>
+      <tr><td><strong>La vague</strong></td><td>Signer la Ville, en pied</td><td class="num">1</td></tr>
+      <tr><td><strong>Le bandeau signature</strong></td><td>Renvoyer vers redon.fr et le logo</td><td class="num">1</td></tr>
+      <tr><td><strong>Le rayonnement</strong></td><td>Accentuer une information clé</td><td class="num">1 groupe</td></tr>
+      <tr><td><strong>Le filet coloré</strong></td><td>Structurer la lecture</td><td>Selon les intertitres</td></tr>
+      <tr><td><strong>Les pictogrammes</strong></td><td>Identifier une nature d'information</td><td class="num">1 par bloc</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="p5-1">5.1 Le cartouche</h3>
+  <p class="prose">Élément principal de l'identité. Forme rectangulaire à coins arrondis, prolongée d'une pointe latérale, façon bulle. Il porte la couleur de l'univers concerné.</p>
+  <h4>Il contient</h4>
+  <ul class="bullets">
+    <li>La <strong>catégorie</strong>, en capitales, précédée du pictogramme d'univers (CULTURE, SPORT, TRAVAUX…)&nbsp;;</li>
+    <li>Le <strong>titre</strong> de la communication, en ExtraBold&nbsp;;</li>
+    <li>Éventuellement une <strong>accroche courte</strong>, en dessous.</li>
+  </ul>
+  <h4>Règles</h4>
+  <ul class="rules rules--do">
+    <li>Position par défaut&nbsp;: en haut à gauche, marge constante.</li>
+    <li>Variante admise&nbsp;: en bas à droite, lorsque la photographie doit être mise en avant.</li>
+    <li>Texte blanc, systématiquement.</li>
+  </ul>
+  <ul class="rules rules--dont">
+    <li>Un seul cartouche par visuel.</li>
+    <li>Il ne sert que pour l'annonce — jamais pour porter des informations pratiques.</li>
+  </ul>
+  <div class="figrow">
+    <figure>
+      <button class="zoom" type="button" data-caption="Cartouche en haut à gauche : la position par défaut.">
+        <img loading="lazy" src="assets/img/cartouche-haut.jpg" alt="Publication où le cartouche coloré est placé en haut à gauche du visuel.">
+      </button>
+      <figcaption>Cartouche en haut — position par défaut.</figcaption>
+    </figure>
+    <figure>
+      <button class="zoom" type="button" data-caption="Variante : cartouche en bas, lorsque la photographie doit être mise en avant.">
+        <img loading="lazy" src="assets/img/cartouche-bas.jpg" alt="Publication où le cartouche coloré est placé dans la partie basse du visuel.">
+      </button>
+      <figcaption>Variante admise — cartouche en bas.</figcaption>
+    </figure>
+  </div>
+
+  <h3 id="p5-2">5.2 Le bloc blanc</h3>
+  <p class="prose">Signature des informations pratiques. Toujours&nbsp;: fond blanc, coins arrondis, photo en arrière-plan. Utilisé pour&nbsp;: horaires, ouvertures, fermetures, dates, lieux, tarifs, informations municipales, services.</p>
+  <ul class="rules rules--do">
+    <li>Chaque bloc porte un pictogramme à gauche, dans une pastille de la couleur d'univers.</li>
+    <li>Une information par bloc&nbsp;: une date, un lieu, un tarif — jamais les trois dans le même bloc.</li>
+  </ul>
+  <ul class="rules rules--dont">
+    <li>Ne pas l'utiliser pour annoncer un événement&nbsp;: c'est le rôle du cartouche.</li>
+  </ul>
+
+  <h3 id="p5-3">5.3 La vague</h3>
+  <p class="prose">La vague est la signature graphique de la Ville. Elle évoque la Vilaine, les canaux et la confluence, et assure la continuité entre les supports.</p>
+  <h4>Utilisation</h4>
+  <ul class="rules rules--do">
+    <li>En pied de page des affiches.</li>
+    <li>En pied des publications réseaux sociaux.</li>
+    <li>En pied des flyers.</li>
+    <li>En dernière page des brochures.</li>
+    <li>Sur les supports institutionnels.</li>
+  </ul>
+  <h4>À éviter</h4>
+  <ul class="rules rules--dont">
+    <li>En haut de page.</li>
+    <li>Plusieurs vagues sur un même support.</li>
+    <li>Comme élément décoratif au milieu d'une composition.</li>
+    <li>Déformée, pivotée ou avec des effets.</li>
+  </ul>
+  <h4>Couleurs</h4>
+  <ul class="bullets">
+    <li>Blanche sur fond coloré.</li>
+    <li>Colorée uniquement lorsqu'elle fait partie d'un aplat institutionnel.</li>
+  </ul>
+
+  <h3 id="p5-4">5.4 Le bandeau signature</h3>
+  <p class="prose">Bandeau de pied de page présent sur tous les supports. Il contient, de gauche à droite&nbsp;: les vagues, la mention «&nbsp;Plus d'infos sur redon.fr&nbsp;», puis le logotype de la Ville aligné à droite.</p>
+  <ul class="rules rules--do">
+    <li>Obligatoire sur tous les supports diffusés au public.</li>
+    <li>Sur un flyer recto-verso, il figure sur les deux faces.</li>
+  </ul>
+  <ul class="rules rules--dont">
+    <li>Ne jamais y ajouter d'autre logo&nbsp;: les partenaires disposent d'une ligne dédiée au-dessus du bandeau.</li>
+  </ul>
+  <p class="prose" style="font-size:.88rem;color:var(--ink-2)">Le pied de page de ce guide en reprend la composition.</p>
+
+  <h3 id="p5-5">5.5 Le rayonnement graphique</h3>
+  <p class="prose">Le rayonnement est un élément d'accent qui met en valeur une information importante (date, lieu, information clé, pictogramme). Il apporte du rythme et de la personnalité à l'identité visuelle.</p>
+  <h4>Utilisation</h4>
+  <ul class="rules rules--do">
+    <li>Derrière un pictogramme de date.</li>
+    <li>Derrière un pictogramme de lieu.</li>
+    <li>À proximité d'une information importante.</li>
+    <li>Une seule occurrence par zone d'information.</li>
+  </ul>
+  <h4>À éviter</h4>
+  <ul class="rules rules--dont">
+    <li>En fond de page.</li>
+    <li>Comme motif répétitif.</li>
+    <li>Agrandi de manière excessive.</li>
+    <li>En plusieurs exemplaires sur un même bloc.</li>
+    <li>Changer l'ordre des couleurs.</li>
+  </ul>
+
+  <h3 id="p5-6">5.6 Le filet coloré</h3>
+  <p class="prose">Petit soulignement placé sous un titre ou un intertitre, dans la couleur de l'univers. Il structure la lecture et signale un changement de niveau. Il n'est jamais décoratif et ne s'utilise pas pour séparer deux blocs — c'est le rôle du blanc.</p>
+
+  <h3 id="p5-7">5.7 Les pictogrammes</h3>
+  <p class="prose">Famille unique, dessinés au trait, monochromes, même épaisseur, même style. Ils identifient l'univers dans le cartouche et la nature de l'information dans les blocs.</p>
+  <div class="pictos" id="pictos"></div>
+  <p class="prose">Chaque pictogramme se pose en blanc, centré dans une pastille de la couleur de son univers. Les pictogrammes fonctionnels — date, lieu, horaire, tarif — se posent en bleu foncé, sauf l'alerte, en rouge.</p>
+  <div class="callout">
+    <p class="callout__t">Les pictogrammes fonctionnels courants</p>
+    <p>Calendrier (date), épingle (lieu), horloge (horaire), pièce (tarif), P (stationnement), fauteuil (accessibilité PMR), couverts (restauration), parapluie (repli), enveloppe (contact), téléphone, écran (en ligne). <strong>Le billet est réservé à l'univers Culture&nbsp;: un tarif se signale par la pièce.</strong></p>
+  </div>
+  <ul class="rules rules--dont">
+    <li>Ne jamais mélanger deux familles de pictogrammes, ni utiliser d'émojis dans un visuel.</li>
+  </ul>
+  <p class="prose" style="font-size:.9rem;color:var(--ink-2)">Les fichiers sources sont disponibles dans le kit de communication, dossier «&nbsp;00 — Ne pas modifier&nbsp;».</p>
+</section>
+
+<!-- ══════════════ 6. PHOTOGRAPHIE ══════════════ -->
+<section class="sec" id="p6" data-part="6" data-title="La photographie">
+  <div class="cartouche"><span class="cartouche__cat">Partie 6</span><h2>La photographie</h2></div>
+
+  <h3 id="p6-1">6.1 Le style recherché</h3>
+  <ul class="bullets">
+    <li>Des photos naturelles, prises à Redon, reconnaissables par les habitants.</li>
+    <li>Des habitants en situation, plutôt que des poses.</li>
+    <li>Une lumière naturelle, des scènes de vie, du mouvement.</li>
+    <li>Un cadrage large, laissant une zone calme pour poser le cartouche.</li>
+    <li>Une dominante qui n'entre pas en conflit avec la couleur d'univers.</li>
+  </ul>
+
+  <h3 id="p6-2">6.2 À éviter</h3>
+  <ul class="rules rules--dont">
+    <li>Les banques d'images artificielles et les mises en scène de bureau génériques.</li>
+    <li>Les filtres marqués, les virages colorés, le noir et blanc, sauf usage patrimonial assumé.</li>
+    <li>Les photos trop chargées sur lesquelles aucun texte ne tient.</li>
+    <li>Les visages d'enfants sans autorisation écrite.</li>
+  </ul>
+
+  <h3 id="p6-3">6.3 Droits et crédits</h3>
+  <ul class="bullets">
+    <li>Toute photo diffusée suppose une <strong>autorisation de droit à l'image</strong>, conservée par le service organisateur.</li>
+    <li>Le <strong>crédit photo</strong> figure en mention discrète, en bas du support, en Regular.</li>
+    <li>Les images générées par intelligence artificielle sont réservées aux illustrations de principe et signalées comme telles&nbsp;; elles ne représentent jamais un lieu ou un événement réel de Redon.</li>
+  </ul>
+</section>
+
+<!-- ══════════════ 7. TON ÉDITORIAL ══════════════ -->
+<section class="sec" id="p7" data-part="7" data-title="Le ton éditorial">
+  <div class="cartouche"><span class="cartouche__cat">Partie 7</span><h2>Le ton éditorial</h2></div>
+  <p class="lead prose">La forme ne suffit pas&nbsp;: un support bien composé mais écrit en langue administrative ne remplit pas son rôle. Le ton de la Ville est toujours positif, simple, utile et orienté habitant.</p>
+
+  <h3 id="p7-1">7.1 Les quatre règles</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Règle</th><th>Application</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Positif</strong></td><td>On dit ce qui est possible avant ce qui est interdit.</td></tr>
+      <tr><td><strong>Simple</strong></td><td>Des phrases courtes, un vocabulaire courant, pas de sigles non explicités.</td></tr>
+      <tr><td><strong>Utile</strong></td><td>Chaque support répond à&nbsp;: quoi, quand, où, pour qui, combien, comment y aller.</td></tr>
+      <tr><td><strong>Orienté habitant</strong></td><td>On s'adresse à la personne («&nbsp;vous&nbsp;»), pas à l'institution.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="p7-2">7.2 Reformuler&nbsp;: quelques exemples</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th style="width:44%">Formulation administrative</th><th>Formulation Ville de Redon</th></tr></thead>
+    <tbody>
+      <tr><td style="color:var(--ink-2)">Les Halles sont ouvertes.</td><td><strong>Faites le plein de produits frais aux Halles de Redon.</strong></td></tr>
+      <tr><td style="color:var(--ink-2)">Fermeture exceptionnelle du service état civil.</td><td><strong>L'accueil état civil est fermé mardi 14. Vos démarches restent possibles en ligne.</strong></td></tr>
+      <tr><td style="color:var(--ink-2)">Réunion publique de concertation relative au réaménagement du quai.</td><td><strong>Venez donner votre avis sur le futur quai Saint-Jacques.</strong></td></tr>
+      <tr><td style="color:var(--ink-2)">Inscriptions périscolaires&nbsp;: la campagne est ouverte.</td><td><strong>Inscrivez votre enfant au périscolaire, jusqu'au 30 juin.</strong></td></tr>
+      <tr><td style="color:var(--ink-2)">Des travaux vont être entrepris.</td><td><strong>Le chemin de halage sera fermé à partir du 8 juin. Voici les déviations.</strong></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="p7-3">7.3 Écrire pour être lu</h3>
+  <ul class="bullets">
+    <li>Un titre de <strong>moins de six mots</strong> sur une affiche.</li>
+    <li>Une seule idée par bloc d'information.</li>
+    <li>Les dates écrites en toutes lettres&nbsp;: «&nbsp;samedi 22 juin&nbsp;», pas «&nbsp;22/06&nbsp;».</li>
+    <li>Les horaires au format «&nbsp;18 h&nbsp;», «&nbsp;8 h 30&nbsp;» (espace insécable avant et après le h).</li>
+    <li>Un appel à l'action explicite&nbsp;: «&nbsp;Plus d'infos sur redon.fr&nbsp;», «&nbsp;Inscription en mairie&nbsp;».</li>
+    <li>Sur les réseaux sociaux, l'essentiel figure sur le visuel&nbsp;: le texte de publication le complète, il ne le remplace pas.</li>
+  </ul>
+</section>
+
+<!-- ══════════════ 8. LES QUATRE MODÈLES ══════════════ -->
+<section class="sec" id="p8" data-part="8" data-title="Les quatre modèles de communication">
+  <div class="cartouche"><span class="cartouche__cat">Partie 8</span><h2>Les quatre modèles de communication</h2></div>
+  <p class="lead prose">Tout support de la Ville relève de l'un des quatre modèles suivants. Choisir le bon modèle est la première décision à prendre — avant même d'ouvrir Canva.</p>
+
+  <h3 id="p8-1">8.1 Choisir son modèle</h3>
+  <div class="tool">
+    <p class="tool__t">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-7.5-10.2A7.5 7.5 0 0 1 12 3a7.5 7.5 0 0 1 7.5 7.8C19.5 16.3 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.6"/></svg>
+      Quel est votre objectif&nbsp;?
+    </p>
+    <p class="tool__hint">Une seule réponse&nbsp;: elle détermine le modèle, le composant dominant et la composition.</p>
+    <div class="opts" id="modelopts">
+      <button class="opt" type="button" data-model="1" aria-pressed="false">Annoncer une animation, un spectacle, un rendez-vous</button>
+      <button class="opt" type="button" data-model="2" aria-pressed="false">Transmettre une information de service (horaires, ouverture, inscription)</button>
+      <button class="opt" type="button" data-model="3" aria-pressed="false">Faire évoluer un comportement</button>
+      <button class="opt" type="button" data-model="4" aria-pressed="false">Informer vite d'une contrainte ou d'un danger</button>
+    </div>
+    <div class="result" id="modelresult" role="status" aria-live="polite"></div>
+  </div>
+
+  <div class="models">
+    <div class="model" style="--c:var(--u-culture)">
+      <span class="model__n">MODÈLE 1</span><b>Événement</b>
+      <p>Composant dominant&nbsp;: le <strong>cartouche</strong>.</p>
+      <a href="#p8-2" style="font-family:var(--sans);font-size:.78rem;font-weight:600">Voir le détail →</a>
+    </div>
+    <div class="model" style="--c:var(--u-solidarite)">
+      <span class="model__n">MODÈLE 2</span><b>Information pratique</b>
+      <p>Composant dominant&nbsp;: le <strong>bloc blanc</strong>.</p>
+      <a href="#p8-3" style="font-family:var(--sans);font-size:.78rem;font-weight:600">Voir le détail →</a>
+    </div>
+    <div class="model" style="--c:var(--u-environnement)">
+      <span class="model__n">MODÈLE 3</span><b>Sensibilisation</b>
+      <p>Composant dominant&nbsp;: le <strong>fond uni + slogan</strong>.</p>
+      <a href="#p8-4" style="font-family:var(--sans);font-size:.78rem;font-weight:600">Voir le détail →</a>
+    </div>
+    <div class="model" style="--c:var(--u-travaux)">
+      <span class="model__n">MODÈLE 4</span><b>Alerte</b>
+      <p>Composant dominant&nbsp;: le <strong>bloc d'alerte</strong>.</p>
+      <a href="#p8-5" style="font-family:var(--sans);font-size:.78rem;font-weight:600">Voir le détail →</a>
+    </div>
+  </div>
+
+  <h3 id="p8-2">8.2 Modèle 1 — Événement</h3>
+  <p class="prose"><strong>Objectif&nbsp;:</strong> annoncer une animation et donner envie d'y venir.</p>
+  <div class="compo"><span>Photo</span><i>→</i><span>Cartouche</span><i>→</i><span>Bloc date</span><i>→</i><span>Blocs informations</span><i>→</i><span>Vague</span><i>→</i><span>Logo</span></div>
+  <p class="prose" style="margin-top:1rem"><strong>Supports&nbsp;:</strong> affiche A3, flyer A5, publication et carrousel réseaux sociaux, story, programme.</p>
+  <div class="figrow">
+    <figure>
+      <button class="zoom" type="button" data-caption="Publication réseaux sociaux — univers Patrimoine.">
+        <img loading="lazy" src="assets/img/modele-evenement-post.jpg" alt="Publication réseaux sociaux du modèle Événement, en bordeaux, univers Patrimoine.">
+      </button>
+      <figcaption>Publication réseaux sociaux — univers Patrimoine.</figcaption>
+    </figure>
+    <figure>
+      <button class="zoom" type="button" data-caption="Couverture de carrousel — modèle Événement, cartouche en bas et bloc date en haut.">
+        <img loading="lazy" src="assets/img/modele-evenement-carrousel.jpg" alt="Couverture de carrousel du modèle Événement, cartouche placé en bas et bloc date en haut.">
+      </button>
+      <figcaption>Couverture de carrousel — cartouche en bas, bloc date en haut.</figcaption>
+    </figure>
+  </div>
+  <div class="callout callout--ray">
+    <p class="callout__t">Les cinq principes de déclinaison</p>
+    <p>Même couleur thématique&nbsp;• Rayons en accent&nbsp;• Vagues signature&nbsp;• Typographies cohérentes&nbsp;• Logo Ville systématique.</p>
+  </div>
+
+  <h3 id="p8-3">8.3 Modèle 2 — Information pratique</h3>
+  <p class="prose"><strong>Objectif&nbsp;:</strong> transmettre une information de service, sans dramatiser ni séduire.</p>
+  <div class="compo"><span>Photo</span><i>→</i><span>Bloc blanc (message principal)</span><i>→</i><span>Bloc informations</span><i>→</i><span>Vague</span><i>→</i><span>Logo</span></div>
+  <p class="prose" style="margin-top:1rem"><strong>Exemples&nbsp;:</strong> ouverture exceptionnelle des Halles, horaires d'été de la médiathèque, fermeture d'un service, campagne d'inscription.</p>
+  <ul class="rules rules--dont">
+    <li>Pas de cartouche événementiel sur ce modèle&nbsp;: c'est ce qui distingue une information d'une invitation.</li>
+  </ul>
+  <figure style="max-width:420px">
+    <button class="zoom" type="button" data-caption="Affiche A3 — modèle Information pratique, univers Solidarité – CCAS.">
+      <img loading="lazy" src="assets/img/modele-info-affiche.jpg" alt="Affiche A3 du modèle Information pratique, univers Solidarité – CCAS, en rouge corail.">
+    </button>
+    <figcaption>Affiche A3 — modèle Information pratique, univers Solidarité – CCAS.</figcaption>
+  </figure>
+
+  <h3 id="p8-4">8.4 Modèle 3 — Sensibilisation</h3>
+  <p class="prose"><strong>Objectif&nbsp;:</strong> faire évoluer un comportement.</p>
+  <div class="compo"><span>Fond uni</span><i>→</i><span>Illustration simple</span><i>→</i><span>Grand slogan</span><i>→</i><span>Consigne</span><i>→</i><span>Vague</span><i>→</i><span>Logo</span></div>
+  <p class="prose" style="margin-top:1rem"><strong>Exemples&nbsp;:</strong> «&nbsp;Partir sans laisser de trace&nbsp;», tri des déchets, propreté canine, économies d'eau, incivilités.</p>
+  <ul class="bullets">
+    <li>Le fond uni prend la couleur de l'univers concerné (souvent environnement ou vie municipale).</li>
+    <li>Une illustration au trait plutôt qu'une photo&nbsp;: le propos est général, pas situé.</li>
+    <li>Le slogan occupe le tiers supérieur&nbsp;; la consigne, courte, se place en dessous.</li>
+  </ul>
+  <figure style="max-width:400px">
+    <button class="zoom" type="button" data-caption="Flyer A5 — univers Environnement.">
+      <img loading="lazy" src="assets/img/modele-sensibilisation-flyer.jpg" alt="Flyer A5 en fond vert, univers Environnement, avec un grand slogan et une illustration au trait.">
+    </button>
+    <figcaption>Flyer A5 — univers Environnement.</figcaption>
+  </figure>
+
+  <h3 id="p8-5">8.5 Modèle 4 — Alerte</h3>
+  <p class="prose"><strong>Objectif&nbsp;:</strong> informer rapidement d'une contrainte, d'un risque ou d'un changement immédiat.</p>
+  <div class="compo"><span>Photo ou fond</span><i>→</i><span>Bloc d'alerte</span><i>→</i><span>Mesures concrètes</span><i>→</i><span>Vague</span><i>→</i><span>Logo</span></div>
+  <p class="prose" style="margin-top:1rem"><strong>Exemples&nbsp;:</strong> canicule, vigilance météo, coupure d'eau, arrêté de circulation, travaux impactants.</p>
+  <ul class="bullets">
+    <li>Le pictogramme d'alerte (triangle) accompagne obligatoirement le message principal.</li>
+    <li>Les mesures sont listées, jamais rédigées en paragraphe.</li>
+    <li>Le support porte toujours une date de mise à jour et un contact.</li>
+  </ul>
+  <div class="callout callout--alert">
+    <p class="callout__t">Quelle couleur pour une alerte&nbsp;?</p>
+    <p>Pour les chantiers, la voirie, la circulation et les réseaux, on utilise l'univers <strong>Travaux</strong> (jaune <span class="num">#f4be3a</span>, pictogramme cône). Pour les autres alertes — canicule, vigilance météo, coupure d'eau — on conserve la couleur de l'univers concerné et le pictogramme d'alerte.</p>
+  </div>
+  <figure>
+    <button class="zoom" type="button" data-caption="Flyer A5 recto-verso — modèle Alerte, univers Travaux : réhabilitation de l'école maternelle Charlie Chaplin.">
+      <img loading="lazy" src="assets/img/flyer-a5-recto-verso.jpg" alt="Flyer A5 recto-verso du modèle Alerte en jaune, univers Travaux, sur la réhabilitation de l'école maternelle Charlie Chaplin.">
+    </button>
+    <figcaption>Flyer A5 recto-verso — modèle Alerte, univers Travaux&nbsp;: réhabilitation de l'école maternelle Charlie Chaplin.</figcaption>
+  </figure>
+</section>
+
+<!-- ══════════════ 9. DÉCLINAISONS ══════════════ -->
+<section class="sec" id="p9" data-part="9" data-title="Les déclinaisons par support">
+  <div class="cartouche"><span class="cartouche__cat">Partie 9</span><h2>Les déclinaisons par support</h2></div>
+
+  <h3 id="p9-1">9.1 Les formats de référence</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Support</th><th>Format</th><th>Remarques</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Publication réseaux sociaux</strong></td><td class="num">1080 × 1350 px (4:5)</td><td>Format de référence&nbsp;: tout part de lui.</td></tr>
+      <tr><td><strong>Story / Reel</strong></td><td class="num">1080 × 1920 px</td><td>Zones de sécurité&nbsp;: 250 px en haut, 350 px en bas.</td></tr>
+      <tr><td><strong>Carrousel</strong></td><td class="num">1080 × 1350 px, 3 à 6 slides</td><td>Voir 9.3.</td></tr>
+      <tr><td><strong>Bandeau de couverture Facebook</strong></td><td class="num">1640 × 856 px</td><td>Visuel institutionnel, sans texte essentiel.</td></tr>
+      <tr><td><strong>Affiche</strong></td><td class="num">A3 — 297 × 420 mm</td><td>Déclinaison directe du format réseau social.</td></tr>
+      <tr><td><strong>Grande affiche / sucette</strong></td><td class="num">A2 — 420 × 594 mm, ou 120 × 176 cm</td><td>Titre lisible à 10 mètres.</td></tr>
+      <tr><td><strong>Flyer</strong></td><td class="num">A5 — 148 × 210 mm, recto-verso</td><td>Même structure graphique.</td></tr>
+      <tr><td><strong>Panneau de chantier</strong></td><td class="num">80 × 120 cm</td><td>Modèle Alerte, contact obligatoire.</td></tr>
+      <tr><td><strong>Brochure / plaquette</strong></td><td class="num">A4 ou 21 × 21 cm</td><td>Voir 9.6.</td></tr>
+      <tr><td><strong>Présentation</strong></td><td class="num">16:9</td><td>Modèle PowerPoint fourni.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout">
+    <p><strong>Impression&nbsp;:</strong> fichiers en CMJN, 300&nbsp;dpi, avec 3&nbsp;mm de fond perdu et 5&nbsp;mm de marge de sécurité intérieure.<br>
+    <strong>Numérique&nbsp;:</strong> RVB, 72&nbsp;dpi, export PNG ou JPEG qualité maximale.</p>
+  </div>
+
+  <h3 id="p9-2">9.2 La publication réseaux sociaux</h3>
+  <p class="prose">Le visuel doit être compréhensible sans le texte de publication&nbsp;: titre, date et lieu figurent toujours sur l'image.</p>
+  <ul class="rules rules--do">
+    <li>Un cartouche, un bloc date, au maximum deux blocs d'information complémentaires.</li>
+    <li>Un seul groupe de rayons.</li>
+    <li>Le bandeau signature en pied, systématiquement.</li>
+  </ul>
+  <ul class="rules rules--dont">
+    <li>Pas d'ombre portée, pas de contour, pas de dégradé, pas de multiplication d'éléments décoratifs.</li>
+  </ul>
+  <div class="figrow">
+    <figure>
+      <button class="zoom" type="button" data-caption="Publication 1080 × 1350 — univers Travaux.">
+        <img loading="lazy" src="assets/img/post-travaux.jpg" alt="Publication réseaux sociaux en jaune, univers Travaux, avec cartouche, bloc date et bandeau signature.">
+      </button>
+      <figcaption>Univers Travaux&nbsp;: cartouche, bloc date, bloc alerte, bandeau signature.</figcaption>
+    </figure>
+    <figure>
+      <button class="zoom" type="button" data-caption="Publication 1080 × 1350 — univers Environnement.">
+        <img loading="lazy" src="assets/img/post-environnement.jpg" alt="Publication réseaux sociaux en vert, univers Environnement, avec cartouche, bloc date et bandeau signature.">
+      </button>
+      <figcaption>Univers Environnement&nbsp;: même structure, autre couleur.</figcaption>
+    </figure>
+  </div>
+
+  <h3 id="p9-3">9.3 Le carrousel</h3>
+  <p class="prose">Le carrousel permet de donner toutes les informations utiles sans surcharger le premier visuel. Structure recommandée en cinq slides&nbsp;:</p>
+  <ol class="bullets">
+    <li><strong>Couverture</strong> — le cartouche, la date, le lieu. Elle doit fonctionner seule.</li>
+    <li><strong>Programme ou contenu principal</strong> — le détail de l'offre.</li>
+    <li><strong>Infos pratiques</strong> — accès, stationnement, PMR, restauration, repli.</li>
+    <li><strong>Ambiance</strong> — deux ou trois photos, une phrase manuscrite.</li>
+    <li><strong>Appel à l'action</strong> — «&nbsp;On vous attend&nbsp;!&nbsp;», date rappelée, redon.fr.</li>
+  </ol>
+  <p class="prose">Cette structure s'adapte&nbsp;: lorsque le programme est long, il occupe deux slides et la slide ambiance disparaît, comme dans l'exemple ci-dessous.</p>
+  <figure>
+    <button class="zoom" type="button" data-caption="Carrousel Instagram en 5 slides — couverture, programme, suite du programme, infos pratiques, appel à l'action.">
+      <img loading="lazy" src="assets/img/carrousel-5-slides.jpg" alt="Carrousel Instagram de cinq slides alignées : couverture, programme, suite du programme, infos pratiques, appel à l'action.">
+    </button>
+    <figcaption>Carrousel Instagram en 5 slides — couverture, programme, suite du programme, infos pratiques, appel à l'action.</figcaption>
+  </figure>
+  <ul class="rules rules--do">
+    <li>Même couleur, mêmes pictogrammes, mêmes vagues et même typographie sur toutes les slides.</li>
+    <li>Le bandeau signature figure sur chaque slide.</li>
+  </ul>
+  <ul class="rules rules--dont">
+    <li>Pas plus de six slides&nbsp;: au-delà, la lecture décroche.</li>
+  </ul>
+
+  <h3 id="p9-4">9.4 Le flyer A5</h3>
+  <p class="prose">Le recto annonce, le verso détaille. Le recto reprend exactement la composition de la publication réseaux sociaux&nbsp;; le verso organise l'information en blocs à pictogrammes.</p>
+  <ul class="bullets">
+    <li>Le verso comporte toujours&nbsp;: le programme ou le détail, les infos pratiques, un contact identifié et le bandeau signature.</li>
+    <li>Un QR code peut renvoyer vers la page redon.fr correspondante&nbsp;; il est placé dans un bloc dédié, jamais sur une photo.</li>
+  </ul>
+
+  <h3 id="p9-5">9.5 La signalétique de chantier</h3>
+  <ul class="bullets">
+    <li>Modèle Alerte, univers Travaux, avec pictogramme cône.</li>
+    <li><strong>Trois informations maximum&nbsp;:</strong> ce qui change, à partir de quand, quelle est l'alternative.</li>
+    <li>Un contact et une adresse web à jour, systématiquement.</li>
+    <li>Une date de dernière mise à jour visible&nbsp;: un panneau périmé décrédibilise l'ensemble.</li>
+  </ul>
+
+  <h3 id="p9-6">9.6 La plaquette institutionnelle et les brochures</h3>
+  <p class="prose">La plaquette adopte un traitement magazine&nbsp;: grandes photos, beaucoup de respiration, très peu d'éléments décoratifs, hiérarchie claire, et les mêmes composants graphiques que les publications.</p>
+  <ul class="bullets">
+    <li>Une double page = un sujet.</li>
+    <li>Les cartouches ne servent qu'aux ouvertures de rubrique.</li>
+    <li>La vague apparaît en dernière page uniquement.</li>
+    <li>Les chiffres clés sont traités en grand, en couleur d'univers.</li>
+  </ul>
+
+  <h3 id="p9-7">9.7 Les supports internes</h3>
+  <ul class="bullets">
+    <li><strong>PowerPoint&nbsp;:</strong> modèle institutionnel turquoise, cartouche en page de titre, vague en pied de dernière page.</li>
+    <li><strong>Papeterie&nbsp;:</strong> papier à en-tête, carte de visite, chemise à rabats — modèles fournis, non modifiables.</li>
+    <li><strong>Courriels&nbsp;:</strong> signature unique, sans image ajoutée.</li>
+    <li><strong>Site redon.fr et newsletters&nbsp;:</strong> mêmes couleurs d'univers, mêmes pictogrammes, mêmes visuels que les réseaux sociaux.</li>
+  </ul>
+</section>
+
+<!-- ══════════════ 10. MÉTHODE ══════════════ -->
+<section class="sec" id="p10" data-part="10" data-title="Produire un support : la méthode">
+  <div class="cartouche"><span class="cartouche__cat">Partie 10</span><h2>Produire un support&nbsp;: la méthode</h2></div>
+
+  <h3 id="p10-1">10.1 Les sept étapes</h3>
+  <ol class="bullets">
+    <li><strong>Formuler le message en une phrase.</strong> Si vous n'y arrivez pas, le support n'est pas prêt.</li>
+    <li><strong>Choisir le modèle</strong> parmi les quatre (<a href="#p8">partie 8</a>).</li>
+    <li><strong>Choisir l'univers</strong> et donc la couleur et le pictogramme (<a href="#p3">partie 3</a>).</li>
+    <li><strong>Choisir la photo</strong> en vérifiant qu'elle laisse une zone calme pour le cartouche.</li>
+    <li><strong>Composer dans le modèle Canva</strong> correspondant, sans déplacer les blocs existants.</li>
+    <li><strong>Relire avec la checklist</strong> (<a href="#p10-3">10.3</a>), à voix haute et à distance d'écran.</li>
+    <li><strong>Faire valider</strong> par le service communication, puis diffuser.</li>
+  </ol>
+
+  <h3 id="p10-2">10.2 L'organisation sous Canva</h3>
+  <p class="prose">Les modèles sont regroupés dans un espace d'équipe unique, organisé par dossier&nbsp;:</p>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Dossier</th><th>Contenu</th></tr></thead>
+    <tbody>
+      <tr><td class="num">00 — Ne pas modifier</td><td>Logos, vagues, rayons, pictogrammes, palettes.</td></tr>
+      <tr><td class="num">01 — Réseaux sociaux</td><td>Post 4:5, story, carrousel, par modèle.</td></tr>
+      <tr><td class="num">02 — Affiches</td><td>A3, A2, sucette.</td></tr>
+      <tr><td class="num">03 — Flyers</td><td>A5 recto-verso.</td></tr>
+      <tr><td class="num">04 — Travaux et alertes</td><td>Panneaux, flyers riverains, publications.</td></tr>
+      <tr><td class="num">05 — Bureautique</td><td>PowerPoint, papeterie, signatures.</td></tr>
+      <tr><td class="num">99 — Archives</td><td>Supports diffusés, classés par année.</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="rules rules--do">
+    <li>On duplique toujours un modèle, on ne travaille jamais dans le modèle d'origine.</li>
+    <li>Les couleurs de la palette sont enregistrées dans le kit de marque&nbsp;: on ne saisit jamais un code couleur à la main.</li>
+  </ul>
+  <ul class="rules rules--dont">
+    <li>Aucun modèle n'est créé hors de l'espace d'équipe, et aucune police n'y est ajoutée.</li>
+  </ul>
+
+  <h3 id="p10-3">10.3 La checklist avant publication</h3>
+  <div class="tool">
+    <p class="tool__t">
+      <svg viewBox="0 0 24 24"><path d="M9 11l2.5 2.5L20 5"/><path d="M20 12v7a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19V6a1.5 1.5 0 0 1 1.5-1.5H15"/></svg>
+      Les 10 points à vérifier
+    </p>
+    <p class="tool__hint">Vos réponses sont conservées dans ce navigateur, le temps de finir votre support.</p>
+    <ul class="check" id="checklist"></ul>
+    <div class="bar"><i id="checkbar"></i></div>
+    <div class="bar-lbl">
+      <span id="checkcount">0 sur 10</span>
+      <button class="linkbtn" type="button" id="checkreset">Tout décocher</button>
+    </div>
+  </div>
+
+  <h3 id="p10-4">10.4 Le circuit de validation</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Étape</th><th>Qui</th><th>Délai indicatif</th></tr></thead>
+    <tbody>
+      <tr><td>Rédaction du message et choix du modèle</td><td>Service émetteur</td><td>—</td></tr>
+      <tr><td>Composition du support</td><td>Service émetteur ou service communication</td><td>—</td></tr>
+      <tr><td>Relecture forme et fond</td><td>Service communication</td><td class="num">2 jours ouvrés</td></tr>
+      <tr><td>Validation politique si le sujet l'exige</td><td>Élu·e délégué·e</td><td class="num">3 jours ouvrés</td></tr>
+      <tr><td>Impression ou publication</td><td>Service communication</td><td>Selon le support</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="tool">
+    <p class="tool__t">
+      <svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3.5v3M16 3.5v3"/></svg>
+      À quelle date transmettre votre demande&nbsp;?
+    </p>
+    <p class="tool__hint">Indiquez la date de diffusion ou de l'événement&nbsp;; le calcul applique les délais du circuit de validation.</p>
+    <div class="fields">
+      <div class="field">
+        <label for="dl-date">Date de diffusion ou de l'événement</label>
+        <input type="date" id="dl-date">
+      </div>
+      <div class="field">
+        <label for="dl-type">Type de support</label>
+        <select id="dl-type">
+          <option value="rs">Publication réseaux sociaux</option>
+          <option value="print">Affiche ou flyer à imprimer</option>
+          <option value="broch">Brochure ou plaquette</option>
+        </select>
+      </div>
+    </div>
+    <div class="deadline" id="deadline" role="status" aria-live="polite"></div>
+  </div>
+
+  <div class="callout callout--ray">
+    <p class="callout__t">Anticiper</p>
+    <p>Toute diffusion externe est soumise à la validation du service communication, avec un <strong>délai plancher de 5 jours ouvrés</strong>.</p>
+    <p><strong>Publication réseaux sociaux&nbsp;:</strong> demande transmise au moins 5 jours ouvrés avant la diffusion.<br>
+    <strong>Affiche ou flyer à imprimer&nbsp;:</strong> au moins 3 semaines avant la date de l'événement.<br>
+    <strong>Brochure ou plaquette&nbsp;:</strong> au moins 2 mois.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 11. INTERDITS ══════════════ -->
+<section class="sec" id="p11" data-part="11" data-title="Les interdits — récapitulatif">
+  <div class="cartouche"><span class="cartouche__cat">Partie 11</span><h2>Les interdits — récapitulatif</h2></div>
+  <p class="lead prose">Ces règles sont les mêmes pour les services, les prestataires et les partenaires.</p>
+  <div class="bans">
+    <div class="ban">
+      <h4>Sur le logotype</h4>
+      <ul class="rules rules--dont">
+        <li>Rotation, déformation, recadrage, recomposition.</li>
+        <li>Changement de couleur sans autorisation du service communication.</li>
+        <li>Utilisation en deçà de 20 × 17 mm ou dans la zone de protection d'un autre élément.</li>
+      </ul>
+    </div>
+    <div class="ban">
+      <h4>Sur les couleurs et la typographie</h4>
+      <ul class="rules rules--dont">
+        <li>Couleur hors palette, ou deux couleurs d'univers sur un même visuel.</li>
+        <li>Jaune en couleur principale d'un support, hors univers Travaux.</li>
+        <li>Noir pur pour le texte.</li>
+        <li>Autre police que Poppins sur un support de communication.</li>
+      </ul>
+    </div>
+    <div class="ban">
+      <h4>Sur les composants</h4>
+      <ul class="rules rules--dont">
+        <li>Plusieurs cartouches, plusieurs vagues ou plusieurs groupes de rayons sur un même support.</li>
+        <li>Vague en haut de page ou au milieu d'une composition.</li>
+        <li>Bloc blanc utilisé pour annoncer un événement.</li>
+        <li>Rayonnement en fond de page, en motif, ou dans un ordre de couleurs modifié.</li>
+      </ul>
+    </div>
+    <div class="ban">
+      <h4>Sur la mise en page</h4>
+      <ul class="rules rules--dont">
+        <li>Ombres portées, contours, dégradés, effets de texte.</li>
+        <li>Texte justifié, texte souligné, capitales sur une phrase entière.</li>
+        <li>Émojis dans un visuel, mélange de familles de pictogrammes.</li>
+        <li>Photo étirée, pixellisée, ou image de banque manifestement artificielle.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 12. ANNEXES ══════════════ -->
+<section class="sec" id="p12" data-part="12" data-title="Annexes">
+  <div class="cartouche"><span class="cartouche__cat">Partie 12</span><h2>Annexes</h2></div>
+
+  <h3 id="p12-a">Annexe A — Mémo couleurs</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Univers</th><th>Référence</th><th>Univers</th><th>Référence</th></tr></thead>
+    <tbody>
+      <tr><td>Vie municipale</td><td class="num">#00a096</td><td>Travaux</td><td class="num">#f4be3a</td></tr>
+      <tr><td>Environnement</td><td class="num">#008435</td><td>Enfance jeunesse</td><td class="num">#e95e0f</td></tr>
+      <tr><td>Sport</td><td class="num">#2498d4</td><td>Solidarité – CCAS</td><td class="num">#ff5757</td></tr>
+      <tr><td>Patrimoine</td><td class="num">#7a2338</td><td>Texte principal</td><td class="num">#22384a</td></tr>
+      <tr><td>Commerce</td><td class="num">#8e44ad</td><td>Texte secondaire</td><td class="num">#5b6a75</td></tr>
+      <tr><td>Culture</td><td class="num">#e64373</td><td>Couleur secondaire</td><td class="num">#b0c74e</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="p12-b">Annexe B — Mémo formats</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Support</th><th>Dimensions</th></tr></thead>
+    <tbody>
+      <tr><td>Publication réseaux sociaux</td><td class="num">1080 × 1350 px</td></tr>
+      <tr><td>Story</td><td class="num">1080 × 1920 px</td></tr>
+      <tr><td>Affiche</td><td class="num">A3 — 297 × 420 mm</td></tr>
+      <tr><td>Flyer</td><td class="num">A5 — 148 × 210 mm</td></tr>
+      <tr><td>Panneau de chantier</td><td class="num">80 × 120 cm</td></tr>
+      <tr><td>Impression</td><td class="num">CMJN, 300 dpi, fond perdu 3 mm</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="p12-c">Annexe C — Obtenir le kit de communication</h3>
+  <p class="prose">Le kit rassemble les fichiers du logotype (toutes versions, formats vectoriels et bitmap), les pictogrammes, les vagues, les rayons, la palette et les modèles Canva.</p>
+  <div class="callout">
+    <p class="callout__t">Demande et validation</p>
+    <p><a href="mailto:communication@mairie-redon.fr">communication@mairie-redon.fr</a> — <a href="tel:+33299710527">02 99 71 05 27</a></p>
+    <p style="color:var(--ink-2);font-size:.9rem">Service communication — Ville de Redon, 18 place Saint-Sauveur, 35600 Redon.</p>
+  </div>
+  <div class="callout callout--ray">
+    <p class="callout__t">Ce guide est un document vivant</p>
+    <p>Il sera actualisé au fur et à mesure de la production de nouveaux modèles et des retours des services. Toute remarque, difficulté d'application ou besoin de modèle non couvert est à signaler au service communication.</p>
+  </div>
+</section>
+
+</div><!-- /.content -->
+
+<!-- ══════════════ BANDEAU SIGNATURE ══════════════ -->
+<footer class="signature">
+  <svg class="signature__wave" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,0 L1200,0 L1200,10 C1120,8 1040,16 950,25 C800,40 640,36 470,18 C320,2 140,0 0,17 Z"/>
+  </svg>
+  <div class="signature__in">
+    <svg class="signature__waves" viewBox="0 0 100 46" aria-hidden="true">
+      <path d="M6 12 C26 0 46 24 94 8"/>
+      <path d="M6 26 C26 14 46 38 94 22"/>
+      <path d="M6 40 C26 28 46 46 60 40"/>
+    </svg>
+    <p class="signature__txt">Plus d'infos sur <b>redon.fr</b></p>
+    <img class="signature__logo" src="assets/img/logo-ville-de-redon.png" alt="Ville de Redon">
+  </div>
+</footer>
+<p class="colophon">
+  <strong>Guide de communication visuelle de la Ville de Redon — version 1.0.</strong>
+  Projet soumis à la commission communication. Service communication, 18 place Saint-Sauveur, 35600 Redon —
+  <a href="mailto:communication@mairie-redon.fr">communication@mairie-redon.fr</a> — 02 99 71 05 27.
+  <br><br>
+  Cette version en ligne est composée en Poppins pour les titres et l'interface, et en Newsreader pour le texte courant.
+  L'usage exclusif de Poppins prescrit en partie 4 s'applique aux supports de communication de la Ville, pas à cet outil de consultation.
+</p>
+
+</div><!-- /colonne principale -->
+</div><!-- /.app -->
+
+<!-- ══════════════ RECHERCHE ══════════════ -->
+<div class="dialog" id="search" role="dialog" aria-modal="true" aria-label="Rechercher dans le guide">
+  <div class="dialog__panel">
+    <div class="dialog__in">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="searchinput" placeholder="Une couleur, un format, une règle…" autocomplete="off" spellcheck="false">
+      <button class="iconbtn" id="searchclose" aria-label="Fermer la recherche">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="dialog__out" id="searchout"></div>
+  </div>
+</div>
+
+<!-- ══════════════ VISIONNEUSE ══════════════ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Agrandissement de l'image">
+  <img id="lightboximg" alt="">
+  <p id="lightboxcap"></p>
+</div>
+
+<script>
+(function(){
+"use strict";
+var $ = function(s,c){return (c||document).querySelector(s);};
+var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s));};
+
+/* Stockage local tolérant aux navigateurs qui le refusent */
+var store = {
+  get:function(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
+  set:function(k,v){ try{ localStorage.setItem(k,v); }catch(e){} },
+  del:function(k){ try{ localStorage.removeItem(k); }catch(e){} }
+};
+/* Les images sont référencées par leur nom : chemin relatif dans la version « site »,
+   base64 embarquée dans la version fichier unique (window.__ASSETS). */
+var asset = function(n){ return (window.__ASSETS && window.__ASSETS[n]) || "assets/img/" + n; };
+var deburr = function(s){ return s.normalize ? s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase() : s.toLowerCase(); };
+
+/* ═══════ Thème ═══════ */
+var root = document.documentElement;
+var saved = store.get("redon-theme");
+if(saved === "dark" || saved === "light") root.setAttribute("data-theme", saved);
+function paintThemeIcon(){
+  var dark = root.getAttribute("data-theme") === "dark" ||
+    (!root.getAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  $("#themeicon").innerHTML = dark
+    ? '<path d="M20 14.2A8.2 8.2 0 0 1 9.8 4 8.4 8.4 0 1 0 20 14.2z"/>'
+    : '<circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/>';
+}
+paintThemeIcon();
+$("#themebtn").addEventListener("click", function(){
+  var dark = root.getAttribute("data-theme") === "dark" ||
+    (!root.getAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  var next = dark ? "light" : "dark";
+  root.setAttribute("data-theme", next);
+  store.set("redon-theme", next);
+  paintThemeIcon();
+});
+$("#printbtn").addEventListener("click", function(){ window.print(); });
+
+/* ═══════ Sommaire ═══════ */
+var sections = $$(".sec[data-part]");
+var toc = $("#toc");
+sections.forEach(function(sec){
+  var part = sec.dataset.part;
+  var group = document.createElement("div");
+  group.className = "nav__group";
+  group.dataset.part = part;
+
+  var a = document.createElement("a");
+  a.className = "nav__part";
+  a.href = "#" + sec.id;
+  a.innerHTML = '<span class="nav__num">' + part + '</span><span>' + sec.dataset.title + '</span>';
+  group.appendChild(a);
+
+  var subs = $$("h3[id]", sec);
+  if(subs.length){
+    var ul = document.createElement("ul");
+    ul.className = "nav__sub";
+    subs.forEach(function(h){
+      var li = document.createElement("li");
+      li.innerHTML = '<a href="#' + h.id + '">' + h.textContent.trim() + '</a>';
+      ul.appendChild(li);
+    });
+    group.appendChild(ul);
+  }
+  toc.appendChild(group);
+});
+
+/* ═══════ Repérage à la lecture ═══════ */
+var navParts = {}, navSubs = {};
+$$(".nav__part").forEach(function(a){ navParts[a.getAttribute("href").slice(1)] = a; });
+$$(".nav__sub a").forEach(function(a){ navSubs[a.getAttribute("href").slice(1)] = a; });
+
+var targets = sections.concat($$(".sec[data-part] h3[id]"));
+var current = null;
+function spy(){
+  var best = null, bestTop = -Infinity;
+  var line = 130;
+  targets.forEach(function(el){
+    var t = el.getBoundingClientRect().top;
+    if(t <= line && t > bestTop){ bestTop = t; best = el; }
+  });
+  if(!best || best === current) return;
+  current = best;
+  Object.keys(navSubs).forEach(function(k){ navSubs[k].removeAttribute("aria-current"); });
+  Object.keys(navParts).forEach(function(k){ navParts[k].removeAttribute("aria-current"); });
+  $$(".nav__group").forEach(function(g){ g.classList.remove("is-open"); });
+
+  var sec = best.closest(".sec");
+  var partLink = navParts[sec.id];
+  if(partLink){
+    partLink.setAttribute("aria-current","true");
+    partLink.parentElement.classList.add("is-open");
+  }
+  if(best.tagName === "H3" && navSubs[best.id]) navSubs[best.id].setAttribute("aria-current","true");
+}
+
+var progress = $("#progress");
+function onScroll(){
+  spy();
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  progress.style.width = (h > 0 ? Math.min(100, (window.scrollY / h) * 100) : 0) + "%";
+}
+var ticking = false;
+window.addEventListener("scroll", function(){
+  if(ticking) return;
+  ticking = true;
+  window.requestAnimationFrame(function(){ onScroll(); ticking = false; });
+}, {passive:true});
+onScroll();
+
+/* ═══════ Sommaire mobile ═══════ */
+var nav = $("#nav"), scrim = $("#scrim"), burger = $("#burger");
+function closeNav(){ nav.classList.remove("is-open"); scrim.classList.remove("is-on"); burger.setAttribute("aria-expanded","false"); }
+burger.addEventListener("click", function(){
+  var open = nav.classList.toggle("is-open");
+  scrim.classList.toggle("is-on", open);
+  burger.setAttribute("aria-expanded", String(open));
+});
+scrim.addEventListener("click", closeNav);
+nav.addEventListener("click", function(e){ if(e.target.closest("a")) closeNav(); });
+
+/* ═══════ Parcours de lecture ═══════ */
+function applyPath(key){
+  var btn = key ? $('.path[data-path="' + key + '"]') : null;
+  $$(".path").forEach(function(b){ b.setAttribute("aria-pressed", String(b === btn)); });
+  $$(".nav__group").forEach(function(g){ g.classList.remove("is-path"); });
+  if(!btn){ nav.classList.remove("is-dimmed"); store.del("redon-path"); return; }
+  var parts = btn.dataset.parts.split(",");
+  parts.forEach(function(p){
+    var g = $('.nav__group[data-part="' + p + '"]');
+    if(g) g.classList.add("is-path");
+  });
+  nav.classList.add("is-dimmed");
+  $("#pathnote-txt").textContent = btn.querySelector("b").textContent + " — parties " + parts.join(", ") + ".";
+  store.set("redon-path", key);
+}
+$$(".path").forEach(function(b){
+  b.addEventListener("click", function(){
+    applyPath(b.getAttribute("aria-pressed") === "true" ? null : b.dataset.path);
+  });
+});
+$("#pathclear").addEventListener("click", function(){ applyPath(null); });
+applyPath(store.get("redon-path"));
+
+/* ═══════ Palette ═══════ */
+var UNIVERS = [
+  ["Vie municipale","#00a096","Conseil municipal, réunions publiques, consultations, institutionnel","vie-municipale"],
+  ["Environnement","#008435","Nature, biodiversité, plantations, chantiers participatifs","environnement"],
+  ["Sport","#2498d4","Équipements sportifs, associations, événements sportifs","sport"],
+  ["Patrimoine","#7a2338","Sites, visites, histoire, journées du patrimoine","patrimoine"],
+  ["Commerce","#8e44ad","Vie commerciale, Halles, marchés, animations commerciales","commerce"],
+  ["Culture","#e64373","Spectacles, concerts, médiathèque, expositions","culture"],
+  ["Enfance jeunesse","#e95e0f","Écoles, accueils de loisirs, jeunesse, restauration scolaire","enfance"],
+  ["Solidarité – CCAS","#ff5757","Action sociale, seniors, accès aux droits","solidarite"],
+  ["Travaux","#f4be3a","Voirie, circulation, réseaux, chantiers — rôle de vigilance","travaux"],
+  ["Couleur secondaire","#b0c74e","À utiliser avec parcimonie, en complément d'une couleur d'univers",null]
+];
+var palette = $("#palette");
+UNIVERS.forEach(function(u){
+  var b = document.createElement("button");
+  b.type = "button";
+  b.className = "swatch";
+  b.style.setProperty("--c", u[1]);
+  b.dataset.hex = u[1];
+  b.setAttribute("aria-label", "Copier " + u[1] + " — " + u[0]);
+  b.innerHTML =
+    '<span class="swatch__top">' + (u[3] ? '<img src="' + asset("picto-" + u[3] + ".png") + '" alt="">' : '') + '</span>' +
+    '<span class="swatch__body">' +
+      '<span class="swatch__name">' + u[0] + '</span>' +
+      '<span class="swatch__hex">' + u[1] + '</span>' +
+      '<span class="swatch__use">' + u[2] + '</span>' +
+    '</span>';
+  palette.appendChild(b);
+});
+palette.addEventListener("click", function(e){
+  var b = e.target.closest(".swatch");
+  if(!b) return;
+  var hex = b.dataset.hex;
+  var done = function(){
+    b.classList.add("is-copied");
+    setTimeout(function(){ b.classList.remove("is-copied"); }, 1400);
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(hex).then(done, done);
+  } else {
+    var ta = document.createElement("textarea");
+    ta.value = hex; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand("copy"); }catch(err){}
+    document.body.removeChild(ta);
+    done();
+  }
+});
+
+/* ═══════ Pictogrammes ═══════ */
+var PICTOS = [
+  ["vie-municipale","Vie municipale","Hôtel de ville"],
+  ["environnement","Environnement","Feuille"],
+  ["sport","Sport","Silhouette en mouvement"],
+  ["patrimoine","Patrimoine","Monument"],
+  ["commerce","Commerce","Devanture"],
+  ["culture","Culture","Billet"],
+  ["enfance","Enfance jeunesse","Deux silhouettes d'enfants"],
+  ["solidarite","Solidarité – CCAS","Mains"],
+  ["travaux","Travaux","Cône de chantier"],
+  ["alerte","Alerte","Triangle"],
+  ["calendrier","Date","Calendrier"],
+  ["lieu","Lieu","Épingle"]
+];
+var pictos = $("#pictos");
+PICTOS.forEach(function(p){
+  var d = document.createElement("div");
+  d.className = "picto";
+  d.innerHTML = '<img src="' + asset("picto-" + p[0] + ".png") + '" alt="Pictogramme ' + p[1] + '"><b>' + p[1] + '</b><span>' + p[2] + '</span>';
+  pictos.appendChild(d);
+});
+
+/* ═══════ Sélecteur de modèle ═══════ */
+var MODELES = {
+  "1": {nom:"Modèle 1 — Événement", dom:"Cartouche",
+        obj:"Annoncer une animation et donner envie d'y venir.",
+        compo:["Photo","Cartouche","Bloc date","Blocs informations","Vague","Logo"],
+        sup:"Affiche A3, flyer A5, publication et carrousel réseaux sociaux, story, programme.",
+        lien:"#p8-2"},
+  "2": {nom:"Modèle 2 — Information pratique", dom:"Bloc blanc",
+        obj:"Transmettre une information de service, sans dramatiser ni séduire.",
+        compo:["Photo","Bloc blanc","Bloc informations","Vague","Logo"],
+        sup:"Ouverture exceptionnelle des Halles, horaires d'été de la médiathèque, fermeture d'un service, campagne d'inscription.",
+        lien:"#p8-3"},
+  "3": {nom:"Modèle 3 — Sensibilisation", dom:"Fond uni + slogan",
+        obj:"Faire évoluer un comportement.",
+        compo:["Fond uni","Illustration simple","Grand slogan","Consigne","Vague","Logo"],
+        sup:"Tri des déchets, propreté canine, économies d'eau, incivilités.",
+        lien:"#p8-4"},
+  "4": {nom:"Modèle 4 — Alerte", dom:"Bloc d'alerte",
+        obj:"Informer rapidement d'une contrainte, d'un risque ou d'un changement immédiat.",
+        compo:["Photo ou fond","Bloc d'alerte","Mesures concrètes","Vague","Logo"],
+        sup:"Canicule, vigilance météo, coupure d'eau, arrêté de circulation, travaux impactants.",
+        lien:"#p8-5"}
+};
+var modelResult = $("#modelresult");
+$("#modelopts").addEventListener("click", function(e){
+  var b = e.target.closest(".opt");
+  if(!b) return;
+  var on = b.getAttribute("aria-pressed") !== "true";
+  $$("#modelopts .opt").forEach(function(o){ o.setAttribute("aria-pressed","false"); });
+  if(!on){ modelResult.classList.remove("is-on"); modelResult.innerHTML = ""; return; }
+  b.setAttribute("aria-pressed","true");
+  var m = MODELES[b.dataset.model];
+  modelResult.innerHTML =
+    '<span class="result__badge">Composant dominant&nbsp;: ' + m.dom + '</span>' +
+    '<h4>' + m.nom + '</h4>' +
+    '<p><strong>Objectif&nbsp;:</strong> ' + m.obj + '</p>' +
+    '<div class="compo">' + m.compo.map(function(c){ return '<span>' + c + '</span>'; }).join('<i>→</i>') + '</div>' +
+    '<p style="margin-top:.9rem"><strong>Exemples&nbsp;:</strong> ' + m.sup + '</p>' +
+    '<p><a href="' + m.lien + '" style="font-family:var(--sans);font-size:.82rem;font-weight:600">Lire la fiche complète →</a></p>';
+  modelResult.classList.add("is-on");
+});
+
+/* ═══════ Checklist ═══════ */
+var POINTS = [
+  "Un seul message, une seule idée principale.",
+  "Le bon modèle et la bonne couleur d'univers.",
+  "Un cartouche, un groupe de rayons, une vague en pied.",
+  "Date, lieu, horaire, tarif : présents, exacts, lisibles.",
+  "Accessibilité mentionnée si le lieu est accessible ; contact identifié.",
+  "« Plus d'infos sur redon.fr » et le logo, dans le bandeau signature.",
+  "Orthographe et typographie vérifiées (dates, horaires, majuscules).",
+  "Photo libre de droits, crédit indiqué, autorisations recueillies.",
+  "Format et résolution conformes au support (9.1).",
+  "Validation du service communication obtenue."
+];
+var list = $("#checklist"), bar = $("#checkbar"), count = $("#checkcount");
+var state = (store.get("redon-checklist") || "").split(",");
+POINTS.forEach(function(txt, i){
+  var li = document.createElement("li");
+  li.innerHTML = '<label><input type="checkbox" data-i="' + i + '"' +
+    (state.indexOf(String(i)) > -1 ? " checked" : "") + '><span>' + txt + '</span></label>';
+  list.appendChild(li);
+});
+function refreshCheck(){
+  var boxes = $$("#checklist input");
+  var done = boxes.filter(function(b){ return b.checked; });
+  bar.style.width = (done.length / boxes.length * 100) + "%";
+  count.textContent = done.length + " sur " + boxes.length +
+    (done.length === boxes.length ? " — votre support est prêt à être transmis." : "");
+  store.set("redon-checklist", done.map(function(b){ return b.dataset.i; }).join(","));
+}
+list.addEventListener("change", refreshCheck);
+$("#checkreset").addEventListener("click", function(){
+  $$("#checklist input").forEach(function(b){ b.checked = false; });
+  refreshCheck();
+});
+refreshCheck();
+
+/* ═══════ Rétroplanning ═══════ */
+var DELAIS = {
+  rs:    {j:5, ouvres:true,  lbl:"5 jours ouvrés avant la diffusion"},
+  print: {j:21, ouvres:false, lbl:"3 semaines avant la date de l'événement"},
+  broch: {j:60, ouvres:false, lbl:"2 mois avant la date de parution"}
+};
+var fmt = function(d){ return d.toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long",year:"numeric"}); };
+function computeDeadline(){
+  var input = $("#dl-date"), out = $("#deadline");
+  if(!input.value){ out.classList.remove("is-on"); return; }
+  var parts = input.value.split("-");
+  var d = new Date(+parts[0], +parts[1] - 1, +parts[2]);
+  if(isNaN(d.getTime())){ out.classList.remove("is-on"); return; }
+  var rule = DELAIS[$("#dl-type").value];
+  var limit = new Date(d.getTime());
+  if(rule.ouvres){
+    var left = rule.j;
+    while(left > 0){
+      limit.setDate(limit.getDate() - 1);
+      var w = limit.getDay();
+      if(w !== 0 && w !== 6) left--;
+    }
+  } else {
+    limit.setDate(limit.getDate() - rule.j);
+  }
+  var today = new Date(); today.setHours(0,0,0,0);
+  var late = limit < today;
+  out.className = "deadline is-on" + (late ? " is-late" : "");
+  out.innerHTML = late
+    ? '<b>Le délai est dépassé.</b><small>La règle prévoit ' + rule.lbl + ', soit le ' + fmt(limit) +
+      '. Prenez contact avec le service communication au plus tôt : communication@mairie-redon.fr — 02 99 71 05 27.</small>'
+    : '<b>Transmettez votre demande avant le ' + fmt(limit) + '.</b>' +
+      '<small>Règle appliquée : ' + rule.lbl + '. Relecture forme et fond : 2 jours ouvrés. ' +
+      'Validation politique si le sujet l\'exige : 3 jours ouvrés de plus.</small>';
+}
+$("#dl-date").addEventListener("change", computeDeadline);
+$("#dl-date").addEventListener("input", computeDeadline);
+$("#dl-type").addEventListener("change", computeDeadline);
+
+/* ═══════ Visionneuse ═══════ */
+var lb = $("#lightbox"), lbImg = $("#lightboximg"), lbCap = $("#lightboxcap");
+document.addEventListener("click", function(e){
+  var z = e.target.closest(".zoom");
+  if(z){
+    var img = z.querySelector("img");
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbCap.textContent = z.dataset.caption || "";
+    lb.classList.add("is-on");
+    return;
+  }
+  if(e.target.closest("#lightbox")) lb.classList.remove("is-on");
+});
+
+/* ═══════ Recherche ═══════ */
+var INDEX = [];
+sections.forEach(function(sec){
+  var partLabel = "Partie " + sec.dataset.part + " · " + sec.dataset.title;
+  var blocks = [], cur = {title:sec.dataset.title, id:sec.id, text:""};
+  Array.prototype.forEach.call(sec.children, function(node){
+    if(node.tagName === "H3"){
+      blocks.push(cur);
+      cur = {title:node.textContent.trim(), id:node.id || sec.id, text:""};
+    } else if(node.className !== "cartouche"){
+      cur.text += " " + node.textContent.replace(/\s+/g," ");
+    }
+  });
+  blocks.push(cur);
+  blocks.forEach(function(b){
+    if(!b.text.trim() && b.title === sec.dataset.title) return;
+    INDEX.push({part:partLabel, title:b.title, id:b.id, text:b.text.trim(),
+                hay:deburr(b.title + " " + b.text + " " + partLabel)});
+  });
+});
+
+var dlg = $("#search"), input = $("#searchinput"), out = $("#searchout");
+function openSearch(){ dlg.classList.add("is-on"); input.value = ""; renderHits(""); input.focus(); }
+function closeSearch(){ dlg.classList.remove("is-on"); }
+function escapeHtml(s){ return s.replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+function snippet(text, q){
+  var pos = deburr(text).indexOf(q);
+  if(pos < 0) return escapeHtml(text.slice(0, 130)) + (text.length > 130 ? "…" : "");
+  var start = Math.max(0, pos - 45);
+  var slice = text.slice(start, start + 160);
+  var rel = pos - start;
+  return (start > 0 ? "…" : "") + escapeHtml(slice.slice(0, rel)) +
+         "<em>" + escapeHtml(slice.slice(rel, rel + q.length)) + "</em>" +
+         escapeHtml(slice.slice(rel + q.length)) + "…";
+}
+function renderHits(raw){
+  var q = deburr(raw.trim());
+  if(q.length < 2){
+    out.innerHTML = '<p class="empty">Tapez au moins deux lettres — par exemple «&nbsp;jaune&nbsp;», «&nbsp;A5&nbsp;», «&nbsp;vague&nbsp;» ou «&nbsp;validation&nbsp;».</p>';
+    return;
+  }
+  var hits = INDEX.filter(function(e){ return e.hay.indexOf(q) > -1; }).slice(0, 25);
+  if(!hits.length){
+    out.innerHTML = '<p class="empty">Aucun résultat pour «&nbsp;' + escapeHtml(raw) + '&nbsp;».</p>';
+    return;
+  }
+  out.innerHTML = hits.map(function(h){
+    return '<a class="hit" href="#' + h.id + '"><u>' + escapeHtml(h.part) + '</u><b>' +
+           escapeHtml(h.title) + '</b><span>' + snippet(h.text, q) + '</span></a>';
+  }).join("");
+}
+$("#searchopen").addEventListener("click", openSearch);
+$("#searchclose").addEventListener("click", closeSearch);
+input.addEventListener("input", function(){ renderHits(input.value); });
+dlg.addEventListener("click", function(e){ if(e.target === dlg) closeSearch(); });
+out.addEventListener("click", function(e){ if(e.target.closest(".hit")) closeSearch(); });
+document.addEventListener("keydown", function(e){
+  if((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k"){ e.preventDefault(); openSearch(); }
+  if(e.key === "Escape"){ closeSearch(); lb.classList.remove("is-on"); closeNav(); }
+  if(e.key === "Enter" && dlg.classList.contains("is-on") && document.activeElement === input){
+    var first = out.querySelector(".hit");
+    if(first){ first.click(); closeSearch(); }
+  }
+});
+})();
+</script>
+</body>
+</html>
