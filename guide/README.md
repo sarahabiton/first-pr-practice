@@ -45,8 +45,8 @@ charte évolue : `UNIVERS` (la palette), `PICTOS` (les pictogrammes) et `POINTS`
 ## Points techniques
 
 - Aucune dépendance, aucun script externe, aucun traceur.
-- Les polices (Poppins, Newsreader, IBM Plex Mono) sont appelées sur Google Fonts.
-  Hors connexion, la page bascule sur les polices du poste — Poppins est installée sur
-  les postes des agents qui produisent des supports.
+- Poppins est la seule police utilisée, conformément à la partie 4 du guide. Elle est
+  appelée sur Google Fonts ; hors connexion, la page bascule sur la Poppins du poste,
+  installée chez les agents qui produisent des supports.
 - Les préférences (thème, parcours, checklist) restent dans le navigateur de l'agent ;
   rien n'est envoyé nulle part.
