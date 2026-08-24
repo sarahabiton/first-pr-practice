@@ -225,7 +225,11 @@ figcaption{font-family:var(--sans);font-size:.775rem;color:var(--ink-2);margin-t
 
 /* ---------- Accueil ---------- */
 .hero{padding:2.8rem 0 .5rem;position:relative}
-.hero__rays{position:absolute;right:0;top:2rem;width:120px;height:80px;opacity:.9;pointer-events:none}
+.hero__rays{display:inline-block;width:clamp(54px,5.4vw,84px);margin-left:.34em;
+  vertical-align:text-top;position:relative;top:-.1em;
+  pointer-events:none;user-select:none}
+.hero__rays svg{display:block;width:100%;height:auto}
+.hero__rays path{fill:none;stroke-width:5.5;stroke-linecap:round}
 .hero__eyebrow{font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.15em;
   text-transform:uppercase;color:var(--accent-deep);margin:0 0 .9rem}
 .hero h1{font-family:var(--sans);font-weight:800;letter-spacing:-.03em;line-height:1.02;
@@ -417,7 +421,6 @@ figcaption{font-family:var(--sans);font-size:.775rem;color:var(--ink-2);margin-t
   .scrim.is-on{display:block}
 }
 @media (max-width:760px){
-  .hero__rays{display:none}
   .hero{padding-top:2rem}
 }
 @media (max-width:560px){
@@ -429,7 +432,7 @@ figcaption{font-family:var(--sans);font-size:.775rem;color:var(--ink-2);margin-t
 /* ---------- Impression ---------- */
 @media print{
   :root{--ground:#fff;--surface:#fff;--surface-2:#fff;--line:#ccc;--ink:#000;--ink-2:#333}
-  .nav,.topbar,.scrim,.dialog,.lightbox,.paths,.quicklinks,.tool .opts,.hero__rays,
+  .nav,.topbar,.scrim,.dialog,.lightbox,.paths,.quicklinks,.tool .opts,
   .linkbtn,.no-print,.searchbtn,.fields,.deadline{display:none!important}
   /* La palette et les cartouches doivent sortir en couleur : c'est le sujet. */
   .swatch__top,.cartouche,.cartouche::after,.signature,.picto img,.swatch,.model,
@@ -492,17 +495,16 @@ figcaption{font-family:var(--sans);font-size:.775rem;color:var(--ink-2);margin-t
 <!-- ══════════════ ACCUEIL ══════════════ -->
 <section class="sec" id="accueil" data-title="Accueil" style="border:0;padding-top:0">
   <div class="hero">
-    <svg class="hero__rays" viewBox="0 0 120 80" aria-hidden="true">
-      <g stroke-linecap="round" stroke-width="5" fill="none">
-        <path d="M14 62 L22 40" stroke="var(--u-culture)"/>
-        <path d="M34 56 L38 32" stroke="var(--u-sport)"/>
-        <path d="M56 52 L56 28" stroke="var(--ray)"/>
-        <path d="M78 56 L74 32" stroke="var(--u-environnement)"/>
-        <path d="M98 62 L90 40" stroke="var(--u-enfance)"/>
-      </g>
-    </svg>
     <p class="hero__eyebrow">Ville de Redon · Service communication</p>
-    <h1>Le mode d'emploi de <em>notre identité</em></h1>
+    <h1>Le mode d'emploi de <em>notre identité</em><span class="hero__rays">
+    <svg viewBox="0 0 119 61" aria-hidden="true">
+      <path d="M28.2 58.4 L3.0 38.7" stroke="var(--u-culture)"/>
+      <path d="M42.2 47.0 L26.4 14.7" stroke="var(--u-sport)"/>
+      <path d="M59.7 43.0 L59.7 3.0" stroke="var(--ray)"/>
+      <path d="M77.3 47.0 L93.1 14.7" stroke="var(--u-environnement)"/>
+      <path d="M91.3 58.4 L116.5 38.7" stroke="var(--u-enfance)"/>
+    </svg>
+    </span></h1>
     <p class="hero__sub">Tout ce qu'il faut pour produire, seul et vite, un support immédiatement reconnaissable comme celui de la Ville de Redon.</p>
     <div class="hero__meta">
       <span class="chip"><b>12</b> parties</span>
