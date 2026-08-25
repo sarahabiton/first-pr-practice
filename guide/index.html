@@ -399,13 +399,13 @@ figcaption{font-family:var(--sans);font-size:.775rem;color:var(--ink-2);margin-t
 .signature{background:var(--accent);color:#fff;margin-top:4rem;position:relative}
 .signature__wave{display:block;width:100%;height:38px}
 .signature__wave path{fill:var(--ground)}
-.signature__in{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;
-  padding:.4rem clamp(1.1rem,4vw,3.4rem) 2rem;max-width:1180px}
-.signature__waves{width:58px;flex:none}
-.signature__waves path{stroke:#fff;stroke-width:7;fill:none;stroke-linecap:round}
+/* Les vagues partent du bord du bandeau, comme sur les supports. */
+.signature__in{display:flex;align-items:center;flex-wrap:wrap;gap:clamp(1rem,3vw,2rem);
+  padding:.6rem clamp(1.1rem,4vw,3.4rem) 2.2rem 0;max-width:1180px}
+.signature__waves{width:clamp(96px,11vw,158px);flex:none}
 .signature__txt{font-family:var(--sans);font-size:.95rem;line-height:1.35}
 .signature__txt b{display:block;font-size:1.15rem;font-weight:700}
-.signature__logo{margin-left:auto;background:#fff;border-radius:var(--r-md);padding:.4rem .7rem;width:112px}
+.signature__logo{margin-left:auto;width:clamp(104px,11vw,150px);flex:none}
 .colophon{padding:1.6rem clamp(1.1rem,4vw,3.4rem) 3rem;font-family:var(--sans);font-size:.76rem;
   color:var(--ink-3);line-height:1.6;max-width:78ch}
 .colophon a{color:var(--ink-2)}
@@ -428,7 +428,8 @@ figcaption{font-family:var(--sans);font-size:.775rem;color:var(--ink-2);margin-t
   body{font-size:16px}
   .hero__rays{width:20px;margin-left:.28em}
   .searchbtn kbd{display:none}
-  .signature__logo{margin-left:0}
+  .signature__waves{width:82px}
+  .signature__logo{width:98px}
 }
 /* Sous 385 px, le titre se resserre pour garder le rayonnement au bout de la
    première ligne plutôt que sur une ligne à lui. */
@@ -449,7 +450,7 @@ figcaption{font-family:var(--sans);font-size:.775rem;color:var(--ink-2);margin-t
   .sec{page-break-inside:avoid;padding-top:1.4rem}
   .zoom{cursor:default}
   a{color:#000;text-decoration:none}
-  .signature{background:#fff;color:#000;border-top:2px solid #000}
+  .signature__waves,.signature__logo{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
 </head>
@@ -1409,18 +1410,14 @@ figcaption{font-family:var(--sans);font-size:.775rem;color:var(--ink-2);margin-t
     <path d="M0,0 L1200,0 L1200,10 C1120,8 1040,16 950,25 C800,40 640,36 470,18 C320,2 140,0 0,17 Z"/>
   </svg>
   <div class="signature__in">
-    <svg class="signature__waves" viewBox="0 0 100 46" aria-hidden="true">
-      <path d="M6 12 C26 0 46 24 94 8"/>
-      <path d="M6 26 C26 14 46 38 94 22"/>
-      <path d="M6 40 C26 28 46 46 60 40"/>
-    </svg>
+    <img class="signature__waves" src="assets/img/vagues-bandeau.png" alt="">
     <p class="signature__txt">Plus d'infos sur <b>redon.fr</b></p>
-    <img class="signature__logo" src="assets/img/logo-ville-de-redon.png" alt="Ville de Redon">
+    <img class="signature__logo" src="assets/img/logo-ville-de-redon-blanc.png" alt="Ville de Redon">
   </div>
 </footer>
 <p class="colophon">
-  <strong>Guide de communication visuelle de la Ville de Redon — version 1.0.</strong>
-  Projet soumis à la commission communication. Service communication, 18 place Saint-Sauveur, 35600 Redon —
+  <strong>Guide de communication visuelle de la Ville de Redon — version 1.0.</strong><br>
+  Service communication, 18 place Saint-Sauveur, 35600 Redon<br>
   <a href="mailto:communication@mairie-redon.fr">communication@mairie-redon.fr</a> — 02 99 71 05 27.
   <br><br>
   Composé en Poppins, conformément à la partie 4.
