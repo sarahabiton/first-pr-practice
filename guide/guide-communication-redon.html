@@ -273,11 +273,12 @@ figcaption{font-family:var(--sans);font-size:.775rem;color:var(--ink-2);margin-t
 .palette{display:grid;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));gap:.8rem;margin:1.4rem 0 1rem}
 .swatch{position:relative;border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;
   background:var(--surface);cursor:copy;text-align:left;padding:0;transition:.16s;
-  font-family:var(--sans);box-shadow:var(--shadow);display:block;width:100%}
+  font-family:var(--sans);box-shadow:var(--shadow);width:100%;
+  display:flex;flex-direction:column;align-items:stretch}
 .swatch:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
-.swatch__top{height:78px;display:flex;align-items:center;justify-content:center;background:var(--c)}
+.swatch__top{flex:none;height:78px;display:flex;align-items:center;justify-content:center;background:var(--c)}
 .swatch__top img{width:46px;height:46px}
-.swatch__body{padding:.6rem .8rem .75rem}
+.swatch__body{flex:1;padding:.7rem 1.05rem .95rem}
 .swatch__name{display:block;font-size:.83rem;font-weight:700;line-height:1.25}
 .swatch__hex{display:block;font-family:var(--sans);font-size:.72rem;color:var(--ink-2);margin-top:.15rem}
 .swatch__use{display:block;font-size:.7rem;color:var(--ink-3);margin-top:.35rem;line-height:1.4}
