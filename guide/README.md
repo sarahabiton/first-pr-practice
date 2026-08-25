@@ -10,6 +10,7 @@ document Word.
 | --- | --- |
 | `index.html` | Le site. À ouvrir directement, ou à déposer sur un serveur / GitHub Pages. Il a besoin du dossier `assets/`. |
 | `assets/img/` | Le logotype, les 12 pictogrammes et les 11 visuels d'exemple, optimisés pour le web. |
+| `assets/source/` | Les fichiers d'origine transmis par le service communication. Ils ne sont pas utilisés par la page : ils servent de référence pour régénérer les images de `assets/img/`. |
 | `guide-communication-redon.html` | **Le même guide en un seul fichier** (2,6 Mo), images comprises. C'est celui que l'on envoie par courriel ou que l'on dépose sur l'intranet : il n'a besoin de rien d'autre. |
 | `build-standalone.py` | Régénère le fichier unique à partir de `index.html`. |
 
